@@ -1,0 +1,2 @@
+class ReceiverProfilesController < ApplicationController
+end
