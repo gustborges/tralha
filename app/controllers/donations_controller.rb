@@ -1,6 +1,7 @@
 class DonationsController < ApplicationController
 
   def show
-    @donation = Donation.find(params[:id])
+    if current_user.role = receiver
+      @donation = Donation.find(params[:id])
   end
 end
