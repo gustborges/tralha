@@ -1,0 +1,32 @@
+.card-donation {
+}
+
+.card-donation h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-donation p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-donation-infos {
+  width: 200px;
+  height: 150px;
+  margin: auto;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  flex-direction:column;
+ }
+
+.card-donation-infos:hover{
+  cursor: pointer;
+  width: 220px;
+  height:170px;
+}
