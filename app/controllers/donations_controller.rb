@@ -1,5 +1,12 @@
 class DonationsController < ApplicationController
 
+
+  def show
+    if current_user.role = "receiver"
+      @donation = Donation.find(params[:id])
+    end
+  end
+
 def index
     @receiver_profiles = current_user.receiver_profiles
 
@@ -12,5 +19,6 @@ def index
       @donations = Donation.where(category: category)
     end
 end
+
 
 end
