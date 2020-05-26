@@ -1,0 +1,16 @@
+
+  <div class='container'>
+    <div class='text-center mb-5'>
+      <h1>Veja aqui todas as suas doações compatíveis</h1>
+    </div>
+    <div class='card-donation d-flex'>
+      <% @donations.each do |donation| %>
+        <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+          <h3> <%= donation.name.capitalize %> </h3>
+          <p> <%= donation.description %> </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
