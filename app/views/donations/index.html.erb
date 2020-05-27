@@ -1,7 +1,11 @@
 
   <div class='container'>
     <div class='text-center mb-5'>
-      <h1>Veja aqui todas as suas doações compatíveis</h1>
+      <% if current_user.receiver? %>
+        <h1>Veja aqui todas as suas doações disponíveis para você</h1>
+      <% else %>
+        <h1>Veja aqui todas as suas doações</h1>
+      <% end %>
     </div>
     <div class='card-donation d-flex'>
       <% @donations.each do |donation| %>

@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :donations, dependent: :destroy
   has_many :transfers, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  def receiver?
+    role == "receiver"
+  end
 end

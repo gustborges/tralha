@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
 
   def index
-    if current_user.role == 'receiver'
+    if current_user.receiver?
       @receiver_profiles = current_user.receiver_profiles
 
       @profile_categories = []
@@ -18,7 +18,8 @@ class DonationsController < ApplicationController
   end
 
   def show
-    if current_user.role == "receiver"
+    if current_user.receiver?
+
       @donation = Donation.find(params[:id])
     else
       donation = Donation.find(params[:id])
