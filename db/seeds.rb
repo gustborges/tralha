@@ -56,17 +56,20 @@ Category.destroy_all
 
 puts "creating Categories"
 
-c1 = Category.create!(name: "movel",
-             description: "movel")
+c1 = Category.create!(name: "Móveis",
+             description: "Móveis")
 
-c2 = Category.create!(name: "livros",
-             description: "livros")
+c2 = Category.create!(name: "Livros",
+             description: "Livros")
 
-c3 = Category.create!(name: "roupas",
-             description: "roupas")
+c3 = Category.create!(name: "Roupas",
+             description: "Roupas")
 
-c4 = Category.create!(name: "eletrodomestico",
-             description: "eletrodomestico")
+c4 = Category.create!(name: "Eletrônicos",
+             description: "Eletrônicos")
+
+c5 = Category.create!(name: "Brinquedos",
+             description: "Brinquedos")
 
 puts "destroying donations"
 Donation.destroy_all
@@ -102,11 +105,11 @@ Transfer.destroy_all
 
 puts "creating Transfers"
 
-Transfer.create!(receiver_id: u4.id,
+Transfer.create!(user_id: u4.id,
              donation_id: d1.id,
              status: "open")
 
-Transfer.create!(receiver_id: u5.id,
+Transfer.create!(user_id: u5.id,
              donation_id: d2.id,
              status: "open")
 

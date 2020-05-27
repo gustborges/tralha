@@ -12,22 +12,26 @@ class DonationsController < ApplicationController
       @donations = Donation.where(category: category)
     end
   end
-  
+
   def show
     if current_user.role = "receiver"
       @donation = Donation.find(params[:id])
     end
   end
-  
+
   def new
     @donation = Donation.new
+    @categories = ['Brinquedos', 'Livros', 'Eletrônicos', 'Móveis', 'Roupas']
   end
 
   def create
     @donation = Donation.new(donation_params)
+    @donation.status = "open"
+    @donation.user_id = current_user.id
+    @donation.category = Category.find_by_name(params[:donation][:category])
+    @category = @donation.category
     if @donation.save
       redirect_to donation_path(@donation)
-      # Depois será necessário filtrar os receivers por receiver_profile compatível
     else
       render 'donations/new'
     end
@@ -36,6 +40,6 @@ class DonationsController < ApplicationController
   private
 
   def donation_params
-    params.require(:donation).permit(:name, :description, :user, :category, :conservation, :status)
+    params.require(:donation).permit(:name, :description, :user, :conservation, :status)
   end
 end
