@@ -12,13 +12,18 @@ class DonationsController < ApplicationController
       @donations = Donation.where(category: category)
     end
   end
-  
+
   def show
-    if current_user.role = "receiver"
+    if current_user.role == "receiver"
       @donation = Donation.find(params[:id])
+    else
+      donation = Donation.find(params[:id])
+      receivers = ReceiverProfile.where(category_id: donation.category_id)
+      @users = []
+      receivers.each { |receiver| @users << User.find(receiver.user_id) }
     end
   end
-  
+
   def new
     @donation = Donation.new
   end
