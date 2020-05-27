@@ -9,10 +9,12 @@
     </div>
     <div class='card-donation d-flex'>
       <% @donations.each do |donation| %>
-        <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
-          <h3> <%= donation.name.capitalize %> </h3>
-          <p> <%= donation.description %> </p>
-        </div>
+        <%= link_to donation_path(donation) do  %>
+          <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+            <h3> <%= donation.name.capitalize %> </h3>
+            <p> <%= donation.description %> </p>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
