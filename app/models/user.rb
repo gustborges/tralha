@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :receiver_profiles, dependent: :destroy
   has_many :donations, dependent: :destroy
-  has_many :transfers, foreign_key: "receiver_id", class_name: "Transfer", dependent: :destroy
+  has_many :transfers, dependent: :destroy
   has_many :messages, dependent: :destroy
 end
