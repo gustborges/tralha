@@ -6,6 +6,20 @@
     </div>
   </div>
 <% else %>
+<div class="container">
+  <h1>Essa é a sua Doação</h1>
+  <div class='card-donation d-flex'>
+    <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+      <h3> <%= @donation.name.capitalize %> </h3>
+      <p> <%= @donation.description %> </p>
+       <h3><%= link_to "Deletar doação?",
+         donation_path(@donation),
+           method: :delete,
+           data: { confirm: "Tem certeza que quer apagá-la?" },
+           class: "btn btn-warning" %></h3>
+
+    </div>
+  </div>
   <div class="container">
     <h2>Essas são as pessoas que poderão receber sua doação =)</h2>
     <div class='card-donation d-flex'>
