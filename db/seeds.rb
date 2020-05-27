@@ -16,7 +16,6 @@ puts "creating users"
              role: "donor",
              description: "doador",
              phone: "12486956",
-             password: "123123",
              password: "123123")
 
 u2 = User.create!(name: "joao",
