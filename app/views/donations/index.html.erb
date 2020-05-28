@@ -13,6 +13,7 @@
           <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
             <h3> <%= donation.name.capitalize %> </h3>
             <p> <%= donation.description %> </p>
+            <%= cl_image_tag donation.photo.key, height: 30, width: 40, crop: :fill %>
           </div>
         <% end %>
       <% end %>
