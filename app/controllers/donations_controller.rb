@@ -22,6 +22,7 @@ class DonationsController < ApplicationController
 
       @donation = Donation.find(params[:id])
     else
+      @donation = Donation.find(params[:id])
       donation = Donation.find(params[:id])
       receivers = ReceiverProfile.where(category_id: donation.category_id)
       @users = []
@@ -44,6 +45,14 @@ class DonationsController < ApplicationController
       redirect_to donation_path(@donation)
     else
       render 'donations/new'
+    end
+  end
+
+  def destroy
+    if current_user.role == "donor"
+      @donation = Donation.find(params[:id])
+      @donation.destroy
+      redirect_to donations_path
     end
   end
 
