@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :donations, except: [ :edit ] do
+  resources :donations do
     resources :transfers, only:[ :show ]
   end
   resources :users, only: [ :index ]

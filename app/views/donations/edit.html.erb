@@ -1,0 +1,13 @@
+<div class="container">
+  <br>
+  <h2>Chegou a hora!</h2>
+  <p>Precisa mudar alguma informação da sua tralha?</p>
+
+  <%= simple_form_for @donation do |f| %>
+    <%= f.input :category, label: "Tipo de doação", collection: @categories %>
+    <%= f.input :name, label: "O que você está doando?" %>
+    <%= f.input :description, label: "Descreva melhor a sua tralha" %>
+    <%= f.input :conservation, label: "Estado de conservação", as: :radio_buttons, collection: [['Melhor impossível, tá lindo! 🥰'], ['Tá de boa! 😎'], ['Até que dá pra usar 🤷'], ['Horroroso, mas dá pra reutilizar materiais 💩']]%>
+    <%= f.submit "Editar doação", class: "btn btn-primary" %>
+  <% end %>
+</div>
