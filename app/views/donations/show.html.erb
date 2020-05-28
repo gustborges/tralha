@@ -4,6 +4,8 @@
     <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
       <h3> <%= @donation.name.capitalize %> </h3>
       <p> <%= @donation.description %> </p>
+      <%= link_to "Mande uma mensagem", "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação" %>
+
     </div>
   </div>
 <% else %>

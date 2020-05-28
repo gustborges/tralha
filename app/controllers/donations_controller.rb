@@ -19,8 +19,8 @@ class DonationsController < ApplicationController
 
   def show
     if current_user.receiver?
-
       @donation = Donation.find(params[:id])
+      @phone = @donation.user.phone
     else
       @donation = Donation.find(params[:id])
       donation = Donation.find(params[:id])
@@ -55,6 +55,7 @@ class DonationsController < ApplicationController
       redirect_to donations_path
     end
   end
+
 
   private
 
