@@ -3,9 +3,7 @@
   <div class='card-donation d-flex'>
     <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
       <h3> <%= @donation.name.capitalize %> </h3>
-
         <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
-
       <p> <%= @donation.description %> </p>
     </div>
   </div>
@@ -15,9 +13,7 @@
   <div class='card-donation d-flex'>
     <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
       <h3> <%= @donation.name.capitalize %> </h3>
-
         <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
-
       <p> <%= @donation.description %> </p>
        <h3><%= link_to "Deletar doação?",
          donation_path(@donation),
