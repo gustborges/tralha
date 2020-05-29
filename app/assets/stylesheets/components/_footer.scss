@@ -7,6 +7,9 @@
   background-color: #fd604e ;
   height: 140px;
   margin-top: 50px;
+  bottom: 0;
+  width: 100%;
+  clear: both;
 }
 
 .footer-links a{
@@ -16,4 +19,8 @@
 
 .footer-links a:hover{
   opacity: 1;
+}
+
+.container {
+  min-height: 80vh;
 }
