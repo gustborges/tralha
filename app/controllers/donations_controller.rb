@@ -15,7 +15,7 @@ class DonationsController < ApplicationController
     else
       @donations = current_user.donations
     end
-    @transfer = Transfer.find(params[:transfer_id])
+    @transfer = Transfer.create(user_id: current_user.id, donation_id: @donation.id, status: "open")
   end
 
   def show

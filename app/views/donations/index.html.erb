@@ -21,7 +21,8 @@
                         <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
                         <p class="dark-description"><%= donation.description %></p>
                       </div>
-                      <%= link_to transfer_path(@transfer), method: post do  %>
+                      <% @donation = donation %>
+                      <%= link_to donation_transfer_path(@transfer), method: :post do  %>
                         <div class="wrapper perfect-circle-add-button mr-3 d-flex justify-content-center align-items-center p-0">
                           <h3 class="mt-1 text-light font-weight-bold">+<h3>
                         </div>
