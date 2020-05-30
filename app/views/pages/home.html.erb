@@ -9,6 +9,14 @@
           <div class="infos">
             <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Você ainda colabora para que outras pessoas possam usufruir daquele seu sofá que você não gosta mais.</p>
           </div>
+            <div>
+              <% if current_user && current_user.role == "receiver" %>
+                <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
+              <% else %>
+                  <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
+              <% end %>
+            </div>
+
         </div>
         <div class="text-center pt-5">
           <%= link_to "#anchor-link", class:"anchor-link" do %>
