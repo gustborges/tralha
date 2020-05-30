@@ -68,6 +68,8 @@ class DonationsController < ApplicationController
     @donation.name = donation_params[:name]
     @donation.description = donation_params[:description]
     @donation.category = Category.find_by_name(params[:donation][:category])
+    @donation.photo = donation_params[:photo]
+    @donation.conservation = donation_params[:conservation]
     if @donation.save
       redirect_to donation_path(@donation)
     else
