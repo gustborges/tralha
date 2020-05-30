@@ -11,6 +11,7 @@
   </div>
   <div class='row'>
       <% @donations.each do |donation| %>
+<<<<<<< HEAD
           <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
               <%= link_to donation_path(donation) do  %>
                 <div class='card mb-4 round-borders shadow fixed-height-card'>
@@ -31,6 +32,15 @@
                     </div>
                 </div>
               <% end %>
+=======
+        <%= link_to donation_path(donation) do  %>
+          <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+            <h3> <%= donation.name.capitalize %> </h3>
+            <p> <%= donation.description %> </p>
+            <% if donation.photo.attached? %>
+              <%= cl_image_tag donation.photo.key, height: 30, width: 40, crop: :fill %>
+            <% end %>
+>>>>>>> 224fd27255df5574aed2b92f7c66e52032c5b861
           </div>
       <% end %>
   </div>

@@ -14,7 +14,6 @@
   margin: 0;
 }
 
-
 .card-donation-infos {
   width: 200px;
   height: 150px;
@@ -32,6 +31,7 @@
   height:170px;
 }
 
+<<<<<<< HEAD
 .no-decoration a {
   text-decoration: none;
 }
@@ -86,3 +86,29 @@
 .margin-top-button {
   margin-top: 6px;
 }
+=======
+.card-home-first{
+  text-shadow: 1px 1px 2px black;
+}
+
+.card-home-title h1{
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 64px;
+  text-align:center;
+}
+
+.card-home-title {
+  font-size: 16px;
+  text-align:center;
+}
+
+.card-home-second img{
+  width:400px;
+  height:400px;
+}
+
+.card-home-second-infos{
+  color:black;
+}
+
+>>>>>>> 224fd27255df5574aed2b92f7c66e52032c5b861

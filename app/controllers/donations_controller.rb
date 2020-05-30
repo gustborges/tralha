@@ -20,8 +20,8 @@ class DonationsController < ApplicationController
 
   def show
     if current_user.receiver?
-
       @donation = Donation.find(params[:id])
+      @phone = @donation.user.phone
     else
       @donation = Donation.find(params[:id])
       donation = Donation.find(params[:id])
@@ -33,15 +33,12 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
-    @categories = ['Brinquedos', 'Livros', 'Eletrônicos', 'Móveis', 'Roupas']
   end
 
   def create
     @donation = Donation.new(donation_params)
     @donation.status = "open"
     @donation.user_id = current_user.id
-    @donation.category = Category.find_by_name(params[:donation][:category])
-    @category = @donation.category
     if @donation.save
       redirect_to donation_path(@donation)
     else
@@ -57,9 +54,25 @@ class DonationsController < ApplicationController
     end
   end
 
+  def edit
+    @categories = ['Brinquedos', 'Livros', 'Eletrônicos', 'Móveis', 'Roupas']
+    if current_user.role == "donor"
+      @donation = Donation.find(params[:id])
+    end
+  end
+
+  def update
+    @donation = Donation.find(params[:id])
+    if @donation.update(donation_params)
+      redirect_to donation_path(@donation)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def donation_params
-    params.require(:donation).permit(:name, :description, :user, :conservation, :status)
+    params.require(:donation).permit(:name, :category_id, :description, :user, :conservation, :status, :photo)
   end
 end
