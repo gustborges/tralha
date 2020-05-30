@@ -7,7 +7,7 @@
         <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
       <% end %>
       <p> <%= @donation.description %> </p>
-      <%= link_to "Mande uma mensagem", "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação" %>
+      <%= link_to " ", "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", class: "fab fa-whatsapp-square" %>
     </div>
   </div>
 <% else %>
@@ -37,5 +37,6 @@
         </div>
       <% end %>
     </div>
+    <%= link_to "chat here", "https://api.whatsapp.com/send?phone=5511987654321&text=Olá,%20meu%20amigo!" %>
   </div>
 <% end %>
