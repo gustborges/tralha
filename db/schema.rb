@@ -83,13 +83,13 @@ ActiveRecord::Schema.define(version: 2020_05_28_224003) do
   end
 
   create_table "transfers", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "receiver_id", null: false
     t.bigint "donation_id", null: false
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["donation_id"], name: "index_transfers_on_donation_id"
-    t.index ["user_id"], name: "index_transfers_on_user_id"
+    t.index ["receiver_id"], name: "index_transfers_on_receiver_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -118,5 +118,5 @@ ActiveRecord::Schema.define(version: 2020_05_28_224003) do
   add_foreign_key "receiver_profiles", "categories"
   add_foreign_key "receiver_profiles", "users"
   add_foreign_key "transfers", "donations"
-  add_foreign_key "transfers", "users"
+  add_foreign_key "transfers", "users", column: "receiver_id"
 end
