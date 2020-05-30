@@ -57,10 +57,12 @@
           <%= f.input :photo, as: :file %>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn-primary" %>
-        </div>
-      <% end %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "btn-hover" %>
+    </div>
+  <% end %>
+
 
       <p>Não está feliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
