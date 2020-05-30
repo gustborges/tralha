@@ -32,15 +32,12 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
-    @categories = ['Brinquedos', 'Livros', 'Eletrônicos', 'Móveis', 'Roupas']
   end
 
   def create
     @donation = Donation.new(donation_params)
     @donation.status = "open"
     @donation.user_id = current_user.id
-    @donation.category = Category.find_by_name(params[:donation][:category])
-    @category = @donation.category
     if @donation.save
       redirect_to donation_path(@donation)
     else
@@ -65,12 +62,7 @@ class DonationsController < ApplicationController
 
   def update
     @donation = Donation.find(params[:id])
-    @donation.name = donation_params[:name]
-    @donation.description = donation_params[:description]
-    @donation.category = Category.find_by_name(params[:donation][:category])
-    @donation.photo = donation_params[:photo]
-    @donation.conservation = donation_params[:conservation]
-    if @donation.save
+    if @donation.update(donation_params)
       redirect_to donation_path(@donation)
     else
       render :edit
@@ -80,6 +72,6 @@ class DonationsController < ApplicationController
   private
 
   def donation_params
-    params.require(:donation).permit(:name, :category, :description, :user, :conservation, :status, :photo)
+    params.require(:donation).permit(:name, :category_id, :description, :user, :conservation, :status, :photo)
   end
 end
