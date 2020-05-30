@@ -110,4 +110,9 @@
   color:black;
 }
 
+.flip-box {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 
