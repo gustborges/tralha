@@ -15,6 +15,7 @@ class DonationsController < ApplicationController
     else
       @donations = current_user.donations
     end
+
   end
 
   def show

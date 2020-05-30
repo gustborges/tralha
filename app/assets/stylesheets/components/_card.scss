@@ -31,6 +31,61 @@
   height:170px;
 }
 
+.no-decoration a {
+  text-decoration: none;
+}
+
+.round-borders {
+  border-radius: 6px;
+}
+
+.gray-category {
+  color: gray;
+}
+
+.salmon-title {
+  color: $salmon;
+  font-weight: bold;
+}
+
+.dark-description {
+  color: #2b2b2b;
+}
+
+.salmon-underline {
+  text-decoration: underline solid $salmon;
+
+}
+
+.perfect-circle-add-button {
+  border-radius: 100%;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #303960;
+  &:hover {
+    background-color: #2e023f;
+    transition-duration: 2s;
+  }
+}
+
+.perfect-circle-add-button h3 {
+  color: white;
+  font-size: 40px;
+}
+
+.green-circle-button {
+  background-color: green;
+}
+
+.small-check {
+  font-size: 29px;
+}
+
+.margin-top-button {
+  margin-top: 6px;
+}
+
 .card-home-first{
   text-shadow: 1px 1px 2px black;
 }
@@ -54,4 +109,5 @@
 .card-home-second-infos{
   color:black;
 }
+
 
