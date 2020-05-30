@@ -18,7 +18,7 @@
                   <% if donation.photo.attached? %>
                     <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
                   <% else %>
-                    <%= image_tag "old_furniture", class: "card-img-top rounded-top", alt: donation.name %>
+                    <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
                   <% end %>
                     <div class="d-flex align-items-center justify-content-between">
                       <div class="card-body">
