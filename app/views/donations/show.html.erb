@@ -3,28 +3,31 @@
   <div class='card-donation d-flex'>
     <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
       <h3> <%= @donation.name.capitalize %> </h3>
+      <% @donation.photo.attached? do %>
         <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
+      <% end %>
       <p> <%= @donation.description %> </p>
       <%= link_to "Mande uma mensagem", "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação" %>
     </div>
   </div>
 <% else %>
-<div class="container">
-
-  <h1>Essa é a sua Doação</h1>
-  <div class='card-donation d-flex'>
-    <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
-      <h3> <%= @donation.name.capitalize %> </h3>
-        <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
-      <p> <%= @donation.description %> </p>
-       <h3><%= link_to "Deletar doação?",
-         donation_path(@donation),
-           method: :delete,
-           data: { confirm: "Tem certeza que quer apagá-la?" },
-           class: "btn btn-warning" %></h3>
-   </div>
-  </div>
-
+  <div class="container">
+    <h1>Essa é a sua Doação</h1>
+    <div class='card-donation d-flex'>
+      <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+        <h3> <%= @donation.name.capitalize %> </h3>
+        <% @donation.photo.attached? do %>
+          <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
+        <% end %>
+        <p> <%= @donation.description %> </p>
+        <h3><%= link_to "Deletar doação?",
+           donation_path(@donation),
+             method: :delete,
+             data: { confirm: "Tem certeza que quer apagá-la?" },
+             class: "btn btn-warning" %>
+        </h3>
+      </div>
+    </div>
     <h2>Essas são as pessoas que poderão receber sua doação =)</h2>
     <div class='card-donation d-flex'>
       <% @users.each do |user| %>
@@ -34,5 +37,5 @@
         </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
