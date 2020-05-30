@@ -1,13 +1,10 @@
 class TransfersController < ApplicationController
 
   def create
-    @transfer = Transfer.new(transfer_params)
+    @transfer = Transfer.new
+    @transfer.donation = Donation.find(params[:donation_id])
+    @transfer.user = current_user
+    @transfer.status = "open"
     @transfer.save
-  end
-
-  private
-
-  def transfer_params
-    params.require(:transfer).permit(:user, :donation, :status)
   end
 end

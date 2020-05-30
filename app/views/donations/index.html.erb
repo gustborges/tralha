@@ -3,7 +3,7 @@
   <p class="gray-category">DOAÇÕES</p>
   <% if current_user.receiver? %>
       <h2 class="dark-description salmon-underline">Veja aqui todas as doações disponíveis para você</h2>
-      <p>Essa uma lista de doações compatíveis com o seu perfil. Selecione as que você deseja para a sua instituição. O doador receberá uma notificação e aí é só aguardar.</p>
+      <p>Essa é uma lista de doações compatíveis com o seu perfil. Selecione as que você deseja para a sua instituição. É só clicar no <strong>➕</strong>. O doador receberá uma notificação e você terá um retorno da solicitação em até 7 dias! 🚀</p>
     <% else %>
       <h2 class="dark-description salmon-underline">Veja aqui todas as suas doações</h2>
           <p>Essa é a lista de suas doações já publicadas aqui no <strong>#tralha.app</strong>. Continue doando!</p>
@@ -15,18 +15,19 @@
               <%= link_to donation_path(donation) do  %>
                 <div class='card mb-4 round-borders shadow fixed-height-card'>
                   <%= image_tag "old_furniture", class: "card-img-top rounded-top", alt: donation.name %>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-between">
                       <div class="card-body">
                         <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
                         <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
                         <p class="dark-description"><%= donation.description %></p>
                       </div>
-                      <% @donation = donation %>
-                      <%= link_to donation_transfer_path(@transfer), method: :post do  %>
-                        <div class="wrapper perfect-circle-add-button mr-3 d-flex justify-content-center align-items-center p-0">
-                          <h3 class="mt-1 text-light font-weight-bold">+<h3>
-                        </div>
-                      <% end %>
+                      <% if current_user.receiver? %>
+                        <%= link_to donation_transfers_path(donation), method: :post, remote: true,  id:"create_transfer_#{donation.id}" do  %>
+                          <div class="wrapper perfect-circle-add-button mr-4 d-flex justify-content-center align-items-center p-0">
+                            <h3 class="mt-1 text-light font-weight-bold">+<h3>
+                          </div>
+                        <% end %>
+                        <% end %>
                     </div>
                 </div>
               <% end %>

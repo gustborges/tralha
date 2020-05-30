@@ -1,0 +1,12 @@
+var link = document.getElementById("create_transfer_<%= @transfer.donation_id %>")
+
+var block = link.parentElement;
+
+link.remove();
+
+var disabledButton = '<div class="wrapper perfect-circle-add-button green-circle-button mr-3 d-flex justify-content-center align-items-center p-0"><div class="d-flex flex-column align-items-center justify-content-around"> <h3 class="mt-4 text-light font-weight-bold"><i class="small-check fas fa-check"></i></h3><small style="color: gray">Enviado</small></div></div>'
+
+block.insertAdjacentHTML("beforeend", disabledButton);
+
+
+
