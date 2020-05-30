@@ -3,7 +3,7 @@
   <div class='card-donation d-flex'>
     <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
       <h3> <%= @donation.name.capitalize %> </h3>
-      <% if @donation.photo.attached? %>
+      <% @donation.photo.attached? do %>
         <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
       <% end %>
       <p> <%= @donation.description %> </p>
@@ -11,24 +11,23 @@
     </div>
   </div>
 <% else %>
-<div class="container">
-
-  <h1>Essa é a sua Doação</h1>
-  <div class='card-donation d-flex'>
-    <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
-      <h3> <%= @donation.name.capitalize %> </h3>
-      <% if @donation.photo.attached? %>
-        <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
-      <% end %>
-      <p> <%= @donation.description %> </p>
-       <h3><%= link_to "Deletar doação?",
-         donation_path(@donation),
-           method: :delete,
-           data: { confirm: "Tem certeza que quer apagá-la?" },
-           class: "btn btn-warning" %></h3>
-   </div>
-  </div>
-
+  <div class="container">
+    <h1>Essa é a sua Doação</h1>
+    <div class='card-donation d-flex'>
+      <div class='card-donation-infos rounded-lg d-flex justify-content-center'>
+        <h3> <%= @donation.name.capitalize %> </h3>
+        <% @donation.photo.attached? do %>
+          <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
+        <% end %>
+        <p> <%= @donation.description %> </p>
+        <h3><%= link_to "Deletar doação?",
+           donation_path(@donation),
+             method: :delete,
+             data: { confirm: "Tem certeza que quer apagá-la?" },
+             class: "btn btn-warning" %>
+        </h3>
+      </div>
+    </div>
     <h2>Essas são as pessoas que poderão receber sua doação =)</h2>
     <div class='card-donation d-flex'>
       <% @users.each do |user| %>
@@ -37,8 +36,7 @@
           <p> <%= user.description %> </p>
         </div>
       <% end %>
-
+    </div>
+    <%= link_to "chat here", "https://api.whatsapp.com/send?phone=5511987654321&text=Olá,%20meu%20amigo!" %>
   </div>
 <% end %>
-
-<%= link_to "chat here", "https://api.whatsapp.com/send?phone=5511987654321&text=Olá,%20meu%20amigo!" %>
