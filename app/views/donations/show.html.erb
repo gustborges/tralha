@@ -22,12 +22,22 @@
           <%= cl_image_tag @donation.photo.key, height: 30, width: 40, crop: :fill %>
         <% end %>
         <p> <%= @donation.description %> </p>
-        <h3><%= link_to "Deletar doação?",
-           donation_path(@donation),
-             method: :delete,
-             data: { confirm: "Tem certeza que quer apagá-la?" },
-             class: "btn btn-warning" %>
-        </h3>
+        <div class =' d-flex justify-content-around'>
+          <div>
+            <h3><%= link_to donation_path(@donation),
+                 method: :delete,
+                 data: { confirm: "Tem certeza que quer apagá-la?" },
+                 class: "" do %>
+                 <i class="fas fa-trash-alt"></i>
+                <% end %>
+            </h3>
+          </div>
+          <div>
+            <%= link_to edit_donation_path(@donation), class:"" do %>
+            <i class="fas fa-edit"></i>
+            <% end %>
+          </div>
+       </div>
       </div>
     </div>
     <h2>Essas são as pessoas que poderão receber sua doação.</h2>
