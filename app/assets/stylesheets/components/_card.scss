@@ -1,36 +1,41 @@
-.card-donation {
-  justify-content: space-around;
-}
-
-.card-donation h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-donation p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
 .card-donation-infos {
-  width: 200px;
-  height: 150px;
-  margin: auto;
+  margin: 4px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-align: center;
-  flex-direction:column;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  color: black;
  }
 
-.card-donation-infos:hover{
-  cursor: pointer;
-  width: 220px;
-  height:170px;
+.lg-user-avatar {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.receivers-box {
+  padding: 30px 20px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  color: white;
+  background: rgb(61,7,1);
+  background: -webkit-linear-gradient(318deg, rgba(61,7,1,1) 68%, rgba(0,0,0,1) 100%);
+  background: -o-linear-gradient(318deg, rgba(61,7,1,1) 68%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(48deg, rgba(61,7,1,1) 68%, rgba(0,0,0,1) 100%);
+}
+
+.receivers-box h2 {
+  color: white;
+  font-weight: bold;
+}
 .no-decoration a {
   text-decoration: none;
 }
