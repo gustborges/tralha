@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def receiver?
     role == "receiver"
   end
+
+  def donnor?
+    role != "receiver"
+  end
 end
