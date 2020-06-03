@@ -25,7 +25,7 @@
                   autofocus: true,
                   label: "Perfil",
                   as: :radio_buttons,
-                  collection: [['Doador'], ['Recebedor']],
+                  collection: {Doador: "donor", Recebedor: "receiver"},
                   input_html: { autocomplete: "role" }%>
       <%= f.input :description,
                   required: false,
