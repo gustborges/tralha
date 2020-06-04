@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Log in</h2>
+  <h2 style="text-align: center">Entrar</h2 >
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -14,10 +14,19 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "btn-hover" %>
+      <%= f.button :submit, "Entrar", class: "btn-hover" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
 
 </div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+  h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #FD604E;
+  }
+</style>
