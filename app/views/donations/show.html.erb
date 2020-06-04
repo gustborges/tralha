@@ -45,7 +45,7 @@
               <% if @donation.user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, crop: :fill, class: "lg-user-avatar" %>
               <% else %>
-                <%= image_tag "renezin", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
+                <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
               <% end %>
             </div>
             </div>
