@@ -3,10 +3,10 @@ class DonationsController < ApplicationController
   def index
     if current_user.receiver?
       @receiver_profiles = current_user.receiver_profiles
-
       @profile_categories = []
       @receiver_profiles.each do |profile|
         @profile_categories << profile.category
+      current_user.notifications.update_all(read: true)
       end
 
       @profile_categories.each do |category|
@@ -40,7 +40,10 @@ class DonationsController < ApplicationController
     @donation.status = "open"
     @donation.user_id = current_user.id
     if @donation.save
-      redirect_to donation_path(@donation)
+      @receivers = ReceiverProfile.where(category_id: donation.category_id)
+      @receivers.each { |receiver| Notification.create(title: "Nova doação disponível: #{@donation.name} de #{current_user.name}", user: receiver) }
+
+    redirect_to donation_path(@donation)
     else
       render 'donations/new'
     end

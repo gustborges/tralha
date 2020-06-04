@@ -112,6 +112,10 @@ Transfer.create!(user_id: u5.id,
              donation_id: d2.id,
              status: "open")
 
+
+
+
+
 puts "destroying receiver_profile"
 ReceiverProfile.destroy_all
 
@@ -122,3 +126,20 @@ ReceiverProfile.create!(user_id: u4.id,
 
 ReceiverProfile.create!(user_id: u5.id,
              category_id: c2.id)
+
+
+puts "destroying notifications"
+Notification.destroy_all
+
+puts "creating notifications"
+
+Notification.create!(user_id: u4.id,
+  title: "Nova doação disponível: #{d1.name} de #{u1.name}",
+  read: false,
+)
+
+
+Notification.create!(user_id: u5.id,
+  title: "Nova doação disponível: #{d2.name} de #{u2.name}",
+  read: false,
+)
