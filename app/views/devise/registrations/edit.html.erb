@@ -1,6 +1,6 @@
 <div class="container">
       <div class= "d-flex justify-content-center">
-        <h2>Editar seu perfil</h2>
+        <h2 style="text-align: center">Editar seu perfil</h2>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "profile-pic", width: 50, height: 50, crop: :thumb, gravity: :face %>
         <% else %>
@@ -40,18 +40,20 @@
                       collection: {Doador: "donor", Recebedor: "receiver"},
                       input_html: { autocomplete: "role" }%>
           <%= f.input :description,
+                      label: "Descrição",
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "description" }%>
           <%= f.input :password,
-                      hint: "leave it blank if you don't want to change it",
+                      hint: "Deixe em branco se não quiser alterar",
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      label: "Nova senha",
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :current_password,
-                      hint: "Confirme seu password para atualizar as mudanças",
+                      hint: "Confirme sua senha para atualizar as mudanças",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :photo, as: :file %>
@@ -59,7 +61,7 @@
 
 
     <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn-hover" %>
+      <%= f.button :submit, "Atualizar", class: "btn-hover" %>
     </div>
   <% end %>
 
@@ -68,3 +70,12 @@
 
       <%= link_to "Voltar", root_path %>
 </div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+  h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #FD604E;
+  }
+</style>
