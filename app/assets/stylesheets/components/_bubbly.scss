@@ -2,9 +2,17 @@
   position: relative;
   background: #FD604E;
   border-radius: .4em;
+  max-width: 400px;
   p {
     color: white;
     margin: 1rem;
+    text-align: justify;
+  }
+  h4 {
+    color: white;
+    margin: 1rem;
+    margin-bottom: 0rem;
+    font-weight: bolder;
     text-align: justify;
   }
 }
