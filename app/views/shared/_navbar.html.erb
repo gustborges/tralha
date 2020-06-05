@@ -5,9 +5,9 @@
     <% end %>
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <<!-- button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
   <div class="number p-2 bd-highlight">
     <% if user_signed_in? && current_user.role == "receiver" %>
@@ -27,7 +27,7 @@
   </div>
 
 
-  <div class="collapse navbar-collapse p-2 bd-highlight" id="navbarSupportedContent">
+  <div class="p-2 bd-highlight" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">

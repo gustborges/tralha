@@ -21,7 +21,7 @@
   border: white 1px solid;
 }
 
-.number{
+.contador{
   font-family: 'Luckiest Guy', cursive;
 }
 
@@ -32,4 +32,8 @@
 .contador{
   margin-left: 23px;
   margin-top: -20px;
+}
+
+li {
+  list-style-type: none;
 }
