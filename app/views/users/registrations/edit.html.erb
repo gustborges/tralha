@@ -1,12 +1,18 @@
-<div class="container">
-      <div class= "d-flex justify-content-center">
-        <h2 style="text-align: center">Editar seu perfil</h2>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "profile-pic", width: 50, height: 50, crop: :thumb, gravity: :face %>
-        <% else %>
-          <%= image_tag "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png", class: "profile", width: 75, height: 75, crop: :thumb %>
-        <% end %>
-      </div>
+<body>
+   <%= link_to root_path, class: "fa-home" do %>
+    <i class="fas fa-hashtag"></i>
+   <% end %>
+
+<div class="container col-md-8 col-sm-10">
+    <h2 style="text-align: center">Editar seu perfil</h2>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "profile-pic", width: 50, height: 50, crop: :thumb, gravity: :face %>
+      <% else %>
+        <%= image_tag "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png", class: "profile", width: 75, height: 75, crop: :thumb %>
+      <% end %>
+
+      <div class= "d-flex flex-column justify-content-center">
+
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -58,7 +64,7 @@
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :photo, as: :file %>
         </div>
-
+</div>
 
     <div class="form-actions">
       <%= f.button :submit, "Atualizar", class: "btn-hover" %>
@@ -66,10 +72,11 @@
   <% end %>
 
 
-      <p>Não está feliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p class="link-forms">Não está feliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-      <%= link_to "Voltar", root_path %>
+
 </div>
+</body>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
