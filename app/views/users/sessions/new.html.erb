@@ -2,7 +2,7 @@
   <h2 style="text-align: center">Entrar</h2 >
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs col-md-6 col-sm-10">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
