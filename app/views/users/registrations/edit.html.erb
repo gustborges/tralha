@@ -11,7 +11,7 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-inputs col-md-6 col-sm-10 ">
           <%= f.input :email, required: true, autofocus: true %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -77,5 +77,10 @@
   h2 {
     font-family: 'Luckiest Guy', cursive;
     color: #FD604E;
+  }
+
+  body {
+    background: rgb(244,244,244);
+    background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(246,137,137,1) 100%);
   }
 </style>
