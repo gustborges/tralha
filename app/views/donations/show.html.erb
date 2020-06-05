@@ -23,7 +23,7 @@
       <% if @donation.photo.attached? %>
         <%= cl_image_tag @donation.photo.key, height: 400, width: 500, crop: :fill %>
       <% else %>
-        <%= image_tag "old_furniture.jpg", height: 300, width: 400, alt: "Foto de #{@donation.name}" %>
+        <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
       <% end %>
     </div>
 
