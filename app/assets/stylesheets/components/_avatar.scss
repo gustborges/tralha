@@ -21,10 +21,24 @@
   border: white 1px solid;
 }
 
-.number{
-  margin-left: 4px;
-  margin-block-start: -18px;
-  color: red;
+.contador{
   font-family: 'Luckiest Guy', cursive;
 }
 
+.avatar-number{
+  width: 40px;
+
+}
+
+.contador{
+  border-radius: 78%;
+  background-color: #FD604E;
+  text-align: center;
+  width: 60%;
+  margin-top: -26px;
+  margin-left: -8px;
+}
+
+li {
+  list-style-type: none;
+}
