@@ -27,4 +27,15 @@
   font-size: 32px;
   color:white;
   text-shadow: 1px 1px 2px black;
+  position: absolute;
+  margin-left: 10px;
+}
+.fa-home:hover {
+  font-size: 33px;
+  text-decoration: none;
+  color:white;
+}
+
+.fa-home::before {
+  content: none;
 }

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :donations do
     resources :transfers, only:[ :show, :create ]
