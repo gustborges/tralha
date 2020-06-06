@@ -64,10 +64,11 @@
 
 .perfect-circle-add-button {
   border-radius: 100%;
-  min-width: 50px;
-  width: 50px;
-  height: 50px;
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
   background-color: #303960;
+  margin-top: 62px;
   &:hover {
     background-color: #2e023f;
     transition-duration: 2s;
@@ -120,6 +121,7 @@
   transform: scaleX(-1);
 }
 
+
 .cards{
   display:flex;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -130,5 +132,63 @@
 
 .cards h3 {
   font-size: 18px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 100px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-body {
+  padding: 0.5rem;
+}
+
+.donation-open {
+  color: #41C007;
+}
+
+.donation-closed {
+  color: #0708C0;
+}
+
+.donation-progress {
+  color: #FF7A00;
+}
+
+.status-position {
+  margin-bottom: 80px;
+  margin-right: 12px;
+  p {
+    font-weight: bold;
+  }
 }
 

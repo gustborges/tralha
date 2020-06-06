@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :receiver_profiles, dependent: :destroy
   has_many :donations, dependent: :destroy
@@ -15,7 +17,11 @@ class User < ApplicationRecord
     role == "receiver"
   end
 
-  def donnor?
-    role != "receiver"
+  def donor?
+    role == "donor"
+  end
+
+  def recycler?
+    role == "recycler"
   end
 end
