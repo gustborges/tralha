@@ -50,6 +50,38 @@ u5 = User.create!(name: "joana",
              phone: "21999397450",
              password: "123123")
 
+u10 = User.create!(name: "Casa do Lixo",
+             email: "casadolixo@email.com",
+             address: "Praça Maracanã",
+             role: "recycler",
+             description: "Reciclamos qualquer tipo de lixo.",
+             phone: "21999397250",
+             password: "123123")
+
+u11 = User.create!(name: "Recycle City",
+             email: "recyclecity@email.com",
+             address: "Rua Senador Dantas 74",
+             role: "recycler",
+             description: "Nosso galpão é especializado em artigos de alumínio como latas e ferro velho.",
+             phone: "21999395450",
+             password: "123123")
+
+u12 = User.create!(name: "Galpão Santa Teresa",
+             email: "galpaostateresa@email.com",
+             address: "Rua Almirante Alexandrino, 1316",
+             role: "recycler",
+             description: "Um espaço de reciclagem bem perto do centro do Rio. Aceitamos plásticos e tecidos.",
+             phone: "21999390450",
+             password: "123123")
+
+u13 = User.create!(name: "Ladeira Trash",
+             email: "ladeiratrash@email.com",
+             address: "Ladeira da Glória",
+             role: "recycler",
+             description: "Aqui você pode deixar seu ferro velho. Tratamos também lixo eletrônico e descartamos pilhas e baterias da forma mais adequada.",
+             phone: "21999497450",
+             password: "123123")
+
 puts "destroying Categories"
 Category.destroy_all
 

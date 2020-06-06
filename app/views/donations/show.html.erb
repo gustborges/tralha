@@ -3,7 +3,7 @@
 
     <p class="gray-category">DOAÇÕES > <%= @donation.category.name.upcase %></p>
 
-    <div class="donation-tittle">
+    <div class="donation-title">
       <h2><%= @donation.name.capitalize %></h2>
       <% if @donation.photo.attached? %>
         <%= cl_image_tag @donation.photo.key, height: 400, width: 500, crop: :fill %>
@@ -16,7 +16,7 @@
             <p class="gray-category">Doação de <%= @donation.user.name.capitalize %></p>
           </div>
          <div>
-          <% if current_user.donnor? %>
+          <% if current_user.donor? %>
             <%= link_to "<i class='far fa-trash-alt'></i>".html_safe,
               donation_path(@donation),
               method: :delete,
@@ -46,7 +46,7 @@
         <% end %>
       </div>
 
-      <% if current_user.donnor? %>
+      <% if current_user.donor? %>
         <div>
           <h2 class="receiver-title">Instituições compatíveis</h2>
           <p><strong>Ooouuiiii! Sua tralha terá um destino em breve.</strong>
