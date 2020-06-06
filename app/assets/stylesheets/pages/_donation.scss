@@ -73,7 +73,7 @@
 }
 
 .card-donation-receiver{
-  margin: 4px;
+
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -82,12 +82,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 10px;
-  margin-right: 10px;
-  margin-top: 20px;
   color: black;
-  width: 170px;
   box-shadow:0 0 11px 0px cadetblue;
+  margin-left: -5px;
+  margin-right: -5px;
+  padding: 8px;
 }
 
 .section {

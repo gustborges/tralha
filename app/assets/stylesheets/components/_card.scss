@@ -120,4 +120,15 @@
   transform: scaleX(-1);
 }
 
+.cards{
+  display:flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 8px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.cards h3 {
+  font-size: 18px;
+}
 
