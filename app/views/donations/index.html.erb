@@ -32,7 +32,19 @@
                             <h3 class="mt-1 text-light font-weight-bold">+<h3>
                           </div>
                         <% end %>
-                        <% end %>
+                      <% elsif donation.status == "open" %>
+                        <div class="wrapper perfect-circle-add-button mr-4 d-flex justify-content-center align-items-center p-0 bg-success">
+                          <h3 class="mt-1 text-light font-weight-bold"><h3>
+                        </div>
+                      <% elsif donation.status == "closed" %>
+                        <div class="wrapper perfect-circle-add-button mr-4 d-flex justify-content-center align-items-center p-0 bg-danger">
+                          <h3 class="mt-1 text-light font-weight-bold"><h3>
+                        </div>
+                      <% elsif donation.status == "progress" %>
+                        <div class="wrapper perfect-circle-add-button mr-4 d-flex justify-content-center align-items-center p-0 bg-primary">
+                          <h3 class="mt-1 text-light font-weight-bold"><h3>
+                        </div>
+                      <% end %>
                     </div>
                 </div>
               <% end %>
@@ -40,5 +52,3 @@
       <% end %>
   </div>
 </div>
-
-
