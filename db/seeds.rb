@@ -50,6 +50,39 @@ u5 = User.create!(name: "joana",
              phone: "21999397450",
              password: "123123")
 
+u6 = User.create!(name: "Camila",
+             email: "camila@email.com",
+             address: "ladeira da camila",
+             role: "receiver",
+             description: "receiver",
+             phone: "21999397450",
+             password: "123123")
+
+u7 = User.create!(name: "Fernanda",
+             email: "fernanda@email.com",
+             address: "ladeira da fernanda",
+             role: "receiver",
+             description: "receiver",
+             phone: "21994418311",
+             password: "123123")
+
+u8 = User.create!(name: "Amanda",
+             email: "amanda@email.com",
+             address: "ladeira da amanda",
+             role: "receiver",
+             description: "receiver",
+             phone: "21994418311",
+             password: "123123")
+
+u9 = User.create!(name: "Laura",
+             email: "laura@email.com",
+             address: "ladeira da laura",
+             role: "receiver",
+             description: "receiver",
+             phone: "21994418311",
+             password: "123123")
+
+
 puts "destroying Categories"
 Category.destroy_all
 
@@ -99,6 +132,44 @@ d4 = Donation.create!(name: "batedeira",
              user_id: u1.id,
              status: "open")
 
+d5 = Donation.create!(name: "Escrivaninha",
+             description: "Marrom, pouco uso, tamanho padrão",
+             category_id: c1.id,
+             user_id: u1.id,
+             status: "open")
+
+
+d6 = Donation.create!(name: "Cama",
+             description: "Cama de solteiro, com tabuas de madeira",
+             category_id: c1.id,
+             user_id: u1.id,
+             status: "open")
+
+d7 = Donation.create!(name: "Vestido",
+             description: "Pouco usado, perfeito para ir a igreja",
+             category_id: c3.id,
+             user_id: u2.id,
+             status: "open")
+
+d8 = Donation.create!(name: "Casaco",
+             description: "Casaco de inverno, bem quente",
+             category_id: c3.id,
+             user_id: u2.id,
+             status: "open")
+
+d9 = Donation.create!(name: "Jaqueta",
+             description: "Muito estilosa",
+             category_id: c3.id,
+             user_id: u2.id,
+             status: "open")
+
+d10 = Donation.create!(name: "Blusa",
+             description: "Blusa social, perfeita para trabalhar",
+             category_id: c3.id,
+             user_id: u2.id,
+             status: "open")
+
+
 puts "destroying Tranfers"
 Transfer.destroy_all
 
@@ -127,6 +198,20 @@ ReceiverProfile.create!(user_id: u4.id,
 ReceiverProfile.create!(user_id: u5.id,
              category_id: c2.id)
 
+ReceiverProfile.create!(user_id: u6.id,
+             category_id: c1.id)
+
+ReceiverProfile.create!(user_id: u7.id,
+             category_id: c1.id)
+
+ReceiverProfile.create!(user_id: u8.id,
+             category_id: c1.id)
+
+ReceiverProfile.create!(user_id: u9.id,
+             category_id: c1.id)
+
+
+
 
 puts "destroying notifications"
 Notification.destroy_all
@@ -140,6 +225,26 @@ Notification.create!(user_id: u4.id,
 
 
 Notification.create!(user_id: u5.id,
+  title: "Nova doação disponível: #{d2.name} de #{u2.name}",
+  read: false,
+)
+
+Notification.create!(user_id: u6.id,
+  title: "Nova doação disponível: #{d2.name} de #{u2.name}",
+  read: false,
+)
+
+Notification.create!(user_id: u7.id,
+  title: "Nova doação disponível: #{d2.name} de #{u2.name}",
+  read: false,
+)
+
+Notification.create!(user_id: u8.id,
+  title: "Nova doação disponível: #{d2.name} de #{u2.name}",
+  read: false,
+)
+
+Notification.create!(user_id: u9.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
 )
