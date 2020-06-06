@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     @markers = @users.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "users/info_window", locals: { user: user })
       }
     end
   end
