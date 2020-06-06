@@ -1,14 +1,28 @@
-<div class="container">
-  <br>
-  <h2>Chegou a hora!</h2>
-  <p>Vamos nos livrar da sua tralha. Mas, para isso, você precisa incluir alguns detalhes. Conta pra gente: o que está te incomodando e poderia fazer bem a outra pessoa?</p>
-
-  <%= simple_form_for @donation do |f| %>
-    <%= f.association :category, label: "Tipo de doação" %>
-    <%= f.input :name, label: "O que você está doando?" %>
-    <%= f.input :description, label: "Descreva melhor a sua tralha" %>
-    <%= f.input :conservation, label: "Estado de conservação", as: :radio_buttons, collection: [['Melhor impossível, tá lindo! 🥰'], ['Tá de boa! 😎'], ['Até que dá pra usar 🤷'], ['Horroroso, mas dá pra reutilizar materiais 💩']]%>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Publicar doação", class: "btn-hover" %>
+<body class="form-body">
+  <%= link_to root_path, class: "fa-home" do %>
+    <i class="fas fa-hashtag"></i>
   <% end %>
+
+<div class="form-container">
+  <br>
+  <h2>Vamos nos livrar da sua tralha!</h2>
+  <p>Conta pra gente: o que está te incomodando e poderia fazer bem a outra pessoa?</p>
+
+
+  <div class="form-box">
+    <%= simple_form_for @donation do |f| %>
+      <div class="form-inputs">
+          <%= f.association :category, label: "Tipo de doação" %>
+          <%= f.input :name, label: "O que você está doando?" %>
+          <%= f.input :description, label: "Descreva melhor a sua tralha" %>
+          <%= f.input :conservation, label: "Estado de conservação", as: :radio_buttons, collection: [['Melhor impossível, tá lindo! 🥰'], ['Tá de boa! 😎'], ['Até que dá pra usar 🤷'], ['Horroroso, mas dá pra reutilizar materiais 💩']]%>
+          <%= f.input :photo, as: :file %>
+      </div>
+      <div class="form-actions">
+          <%= f.submit "Publicar doação", class: "btn-hover" %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+</body>
