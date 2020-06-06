@@ -25,8 +25,7 @@ class DonationsController < ApplicationController
       @phone = @donation.user.phone
     else
       @donation = Donation.find(params[:id])
-      donation = Donation.find(params[:id])
-      receivers = ReceiverProfile.where(category_id: donation.category_id)
+      receivers = ReceiverProfile.where(category_id: @donation.category_id)
       @users = []
       receivers.each { |receiver| @users << User.find(receiver.user_id) }
     end
@@ -41,8 +40,8 @@ class DonationsController < ApplicationController
     @donation.status = "open"
     @donation.user_id = current_user.id
     if @donation.save
-      @receivers = ReceiverProfile.where(category_id: donation.category_id)
-      @receivers.each { |receiver| Notification.create(title: "Nova doação disponível: #{@donation.name} de #{current_user.name}", user: receiver) }
+      @receivers = ReceiverProfile.where(category_id: @donation.category_id)
+      @receivers.each { |receiver| Notification.create(title: "Nova doação disponível: #{@donation.name} de #{current_user.name}", user: receiver.user) }
 
     redirect_to donation_path(@donation)
     else

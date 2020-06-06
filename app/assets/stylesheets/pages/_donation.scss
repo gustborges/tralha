@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+
+.donation-tittle h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #393e46;
+}
+
+.donation-tittle img {
+  border-radius: 8px;
+}
+
+.donor-name {
+  margin-top: 1em;
+  margin-right: 4em;
+}
+
+.donation-description {
+  margin-top: -10px;
+}
+
+
+.zigzag {
+  // margin: 7.5% 0;
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.zigzag:before, .zigzag:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.zigzag:before {
+  height: 12px;
+  top: 110%;
+  background: linear-gradient(-135deg, #b9e1dc 8px, transparent 0) 0 8px, linear-gradient(135deg, #b9e1dc 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}
+.zigzag:after {
+  height: 16px;
+  top: 100%;
+  background: linear-gradient(-135deg, #F4F4F4 8px, transparent 0) 0 8px, linear-gradient(135deg, #F4F4F4 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}
+
+.receivers {
+  text-align: justify;
+  background-color: #b9e1dc;
+}
+
+.receivers p{
+  font-size: 14px;
+  color: gray;
+}
+
+.receiver-title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  color: #393e46;
+  margin-top: -2em;
+}
+
+.card-donation-receiver{
+  margin: 4px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  color: black;
+  width: 170px;
+  box-shadow:0 0 11px 0px cadetblue;
+}
+
+
+
