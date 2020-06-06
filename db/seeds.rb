@@ -15,7 +15,7 @@ puts "creating users"
              address: "ladeira da gloria",
              role: "donor",
              description: "doador",
-             phone: "12486956",
+             phone: "8694557868",
              password: "123123")
 
 u2 = User.create!(name: "joao",
@@ -23,7 +23,7 @@ u2 = User.create!(name: "joao",
              address: "ladeira da joao",
              role: "donor",
              description: "doador",
-             phone: "12486956",
+             phone: "21967808889",
              password: "123123")
 
 u3 = User.create!(name: "pedro",
@@ -31,7 +31,7 @@ u3 = User.create!(name: "pedro",
              address: "ladeira da pedro",
              role: "donor",
              description: "doador",
-             phone: "12486956",
+             phone: "21967808889",
              password: "123123")
 
 u4 = User.create!(name: "maria",
@@ -39,7 +39,7 @@ u4 = User.create!(name: "maria",
              address: "ladeira da maria",
              role: "receiver",
              description: "receiver",
-             phone: "16511656",
+             phone: "21994418311",
              password: "123123")
 
 u5 = User.create!(name: "joana",
@@ -47,7 +47,7 @@ u5 = User.create!(name: "joana",
              address: "ladeira da joana",
              role: "receiver",
              description: "receiver",
-             phone: "16511656",
+             phone: "21999397450",
              password: "123123")
 
 puts "destroying Categories"
@@ -76,7 +76,7 @@ Donation.destroy_all
 puts "creating donations"
 
 d1 = Donation.create!(name: "guarda-roupa",
-             description: "madeira",
+             description: "Armario de madeira semi-novo, usado poucas vezes, precisa de pintura nova",
              category_id: c1.id,
              user_id: u1.id,
              status: "open")

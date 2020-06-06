@@ -3,20 +3,16 @@
       <div class="card-home-first pt-5" >
         <div class='card-home-title'>
           <h1>#tralha.app</h1>
-          <p>Descartes com Sabedoria</p>
+          <h5>Descartes com Sabedoria</h5>
         </div>
         <div class="card-home-infos text-center m-5 ">
-          <div class="infos">
-            <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Você ainda colabora para que outras pessoas possam usufruir daquele seu sofá que você não gosta mais.</p>
+          <div>
+            <% if current_user && current_user.role == "receiver" %>
+              <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
+            <% else %>
+                <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
+            <% end %>
           </div>
-            <div>
-              <% if current_user && current_user.role == "receiver" %>
-                <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
-              <% else %>
-                  <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
-              <% end %>
-            </div>
-
         </div>
         <div class="text-center pt-5">
           <%= link_to "#anchor-link", class:"anchor-link" do %>
@@ -28,11 +24,13 @@
 </div>
 <div class='container'>
   <div class="card-home-second row" id="anchor-link" >
-    <div class="card-home-second-infos pt-5 col-sm-12 col-md-6" id="anchor-link">
-      <p>Lorem ipsum per nisi metus scelerisque placerat sed nostra ut accumsan ut suscipit non mattis, ornare imperdiet ad ut mattis .</p>
-      <p>Lorem ipsum per nisi metus.  Ad et ipsum consectetur tempor nunc pellentesque lectus euismod malesuada etiam suscipit eleifend adipiscing. tortor dapibus pretium sit velit hac sem viverra habitasse orci, ac euismod convallis accumsan ut conubia porttitor velit quis consectetur, vivamus dapibus donec aliquam lacus sociosqu lectus nullam.</p>
+    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <hgroup class="speech-bubble">
+        <h4>Eu sou Renê Descartes</h4>
+        <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Você ainda colabora para que outras pessoas possam usufruir daquele seu sofá que você não gosta mais.</p>
+      </hgroup>
     </div>
-    <div class="pr-0 pb-0 col-sm-12 col-md-6 d-flex justify-content-center">
+    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <%= image_tag "renezin.png" %>
     </div>
   </div>

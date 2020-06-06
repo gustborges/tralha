@@ -1,35 +1,40 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to root_path, class: "navbar-brand" do %>
-   <%=  image_tag "renezin.png" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top d-flex bd-highlight">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <%= link_to root_path, class: "navbar-brand" do %>
+     <i class="fas fa-home"></i>
+    <% end %>
+  </div>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="number p-2 bd-highlight">
+    <% if user_signed_in? && current_user.role == "receiver" %>
+      <li class="nav-item dropdown">
+      <img class="avatar-number dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.icon-icons.com/icons2/1147/PNG/512/1486486303-alert-bell-notification-education-christmas-bell-church-bell-ring_81235.png" />
+      <div class="contador">
+      <% if current_user.notifications.where(read: false).any? %>
+        <%= current_user.notifications.where(read: false).count %>
+      <% end %>
+      </div>
+    <% end %>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <% if user_signed_in? && current_user.role == "receiver" %>
+        <%= link_to "Você tem #{current_user.notifications.where(read: false).count} novas doações", donations_path, class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
 
 
-      <% if user_signed_in? %>
+  <div class="p-2 bd-highlight" >
+         <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, width: 80, height: 40, crop: :thumb, gravity: :face %>
           <% else %>
             <%= image_tag "https://i.pinimg.com/originals/fd/0c/55/fd0c559856ca991e9e28937dc802f0b0.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, width: 80, height: 40, crop: :thumb, gravity: :face %>
           <% end %>
-          <div class="number">
-          <% if user_signed_in? && current_user.role == "receiver" %>
-            <% if current_user.notifications.where(read: false).any? %>
-              <%= current_user.notifications.where(read: false).count %>
-            <% end %>
-          <% end %>
-          </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Meu Perfil", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Minhas Doações", donations_path, class: "dropdown-item" %>
-            <%= link_to "Voce tem #{current_user.notifications.where(read: false).count} novas correspondências", donations_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </li>
       <% else %>
@@ -39,6 +44,6 @@
           <% end %>
         </li>
       <% end %>
-    </ul>
+
   </div>
 </div>
