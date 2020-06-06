@@ -76,7 +76,7 @@ Donation.destroy_all
 puts "creating donations"
 
 d1 = Donation.create!(name: "guarda-roupa",
-             description: "madeira",
+             description: "Armario de madeira semi-novo, usado poucas vezes, precisa de pintura nova",
              category_id: c1.id,
              user_id: u1.id,
              status: "open")
