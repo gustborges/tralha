@@ -1,46 +1,7 @@
 <% if current_user.receiver? %>
-  <div class="container">
-    <div class="mt-3 mb-3">
-      <h2 class="dark-description salmon-underline">Veja as doações disponíveis</h2>
-    </div>
-    <div class='row'>
-      <% @donations.each do |donation| %>
-          <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
-              <%= link_to donation_path(donation) do  %>
-                <div class="card-product justify-content-between">
-                  <% if donation.photo.attached? %>
-                    <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
-                  <% else %>
-                    <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
-                  <% end %>
-                  <div class="card-body">
-                    <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
-                    <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
-                    <p class="dark-description"><%= donation.description %></p>
-                  </div>
-                  <% if donation.status == "open" %>
-                    <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #41C007">
-                      <h3 class="mt-1 text-light font-weight-bold"><h3>
-                    </div>
-                  <% elsif donation.status == "closed" %>
-                    <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #C00724">
-                      <h3 class="mt-1 text-light font-weight-bold"><h3>
-                    </div>
-                  <% elsif donation.status == "progress" %>
-                    <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #0708C0">
-                      <h3 class="mt-1 text-light font-weight-bold"><h3>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-          </div>
-      <% end %>
-    </div>
-  </div>
-<% else %>
   <div class='container' style="min-height: 0vh">
     <div class="mt-3 mb-3">
-      <h2 class="dark-description salmon-underline"><strong><%= current_user.name.capitalize %></strong>, veja suas doações</h2>
+      <h2 class="dark-description salmon-underline">Veja as doações disponíveis</h2>
     </div>
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -51,7 +12,7 @@
               <%= link_to donation_path(@donations.first) do  %>
                 <div class='card mb-4 round-borders shadow fixed-height-card'>
                   <% if @donations.first.photo.attached? %>
-                    <%= cl_image_tag @donations.first.photo.key, class: "card-img-top rounded-top", crop: :fill %>
+                    <%= cl_image_tag @donations.first.photo.key, class: "card-img-top rounded-top", crop: :fill%>
                   <% else %>
                     <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: @donations.first.name %>
                   <% end %>
@@ -61,19 +22,6 @@
                         <h5 class="salmon-title"><%= @donations.first.name.capitalize %></h5>
                         <p class="dark-description"><%= @donations.first.description %></p>
                       </div>
-                      <% if @donations.first.status == "open" %>
-                        <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #41C007">
-                          <h3 class="mt-1 text-light font-weight-bold"><h3>
-                        </div>
-                      <% elsif @donations.first.status == "closed" %>
-                        <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #C00724">
-                          <h3 class="mt-1 text-light font-weight-bold"><h3>
-                        </div>
-                      <% elsif @donations.first.status == "progress" %>
-                        <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #0708C0">
-                          <h3 class="mt-1 text-light font-weight-bold"><h3>
-                        </div>
-                      <% end %>
                     </div>
                 </div>
               <% end %>
@@ -97,19 +45,6 @@
                           <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
                           <p class="dark-description"><%= donation.description %></p>
                         </div>
-                        <% if donation.status == "open" %>
-                          <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #41C007">
-                            <h3 class="mt-1 text-light font-weight-bold"><h3>
-                          </div>
-                        <% elsif donation.status == "closed" %>
-                          <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #C00724">
-                            <h3 class="mt-1 text-light font-weight-bold"><h3>
-                          </div>
-                        <% elsif donation.status == "progress" %>
-                          <div class="wrapper perfect-circle-add-button mr-2 d-flex justify-content-center align-items-center p-0" style="background-color: #0708C0">
-                            <h3 class="mt-1 text-light font-weight-bold"><h3>
-                          </div>
-                        <% end %>
                       </div>
                   </div>
                 <% end %>
@@ -126,5 +61,44 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
+<% else %>
+  <div class="container">
+    <div class="mt-3 mb-3">
+      <h2 class="dark-description salmon-underline"><strong><%= current_user.name.capitalize %></strong>, veja suas doações</h2>
+    </div>
+    <div class='row'>
+      <% @donations.each do |donation| %>
+          <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
+              <%= link_to donation_path(donation) do  %>
+                <div class="card-product justify-content-between">
+                  <% if donation.photo.attached? %>
+                    <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
+                  <% else %>
+                    <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
+                  <% end %>
+                  <div class="card-body">
+                    <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
+                    <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
+                    <p class="dark-description"><%= donation.description %></p>
+                  </div>
+                  <% if donation.status == "open" %>
+                    <div class="status-position">
+                      <p class="donation-open">Disponível</p>
+                    </div>
+                  <% elsif donation.status == "progress" %>
+                    <div class="status-position">
+                      <p class="donation-closed">Entregue</p>
+                    </div>
+                  <% elsif donation.status == "closed" %>
+                    <div class="status-position">
+                      <p class="donation-closed">Doado</p>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+          </div>
+      <% end %>
+    </div>
   </div>
 <% end %>

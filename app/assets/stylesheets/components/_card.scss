@@ -158,3 +158,23 @@
 .card-body {
   padding: 0.5rem;
 }
+
+.donation-open {
+  color: #41C007;
+}
+
+.donation-closed {
+  color: #0708C0;
+}
+
+.donation-progress {
+  color: #FF7A00;
+}
+
+.status-position {
+  margin-bottom: 80px;
+  margin-right: 12px;
+  p {
+    font-weight: bold;
+  }
+}
