@@ -1,4 +1,5 @@
 class DonationsController < ApplicationController
+  layout 'footerless', only: :new
 
   def index
     if current_user.receiver?
