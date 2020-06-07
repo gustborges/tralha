@@ -1,6 +1,15 @@
-.banner{
-  opacity: 0.8;
+.banner-home{
+  background-size: cover;
   color:white;
-  height: 560px;
-  background-size:cover;
+  opacity: 0.8;
+  height: 400px;
+}
+
+#banner-typed-text{
+  font-family: 'Balsamiq Sans', cursive;
+  color:#ff8246;
+}
+
+#banner-typed-text-fixed{
+  font-family: 'Balsamiq Sans', cursive;
 }

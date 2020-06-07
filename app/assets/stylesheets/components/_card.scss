@@ -92,7 +92,8 @@
 }
 
 .card-home-first{
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 1px black;
+  padding-top: 50px;
 }
 
 .card-home-title h1{
@@ -104,6 +105,7 @@
 .card-home-title {
   font-size: 16px;
   text-align:center;
+  margin-top: 70px;
 }
 
 .card-home-second img{
@@ -113,6 +115,19 @@
 
 .card-home-second-infos{
   color:black;
+}
+
+.card-home-third-infos{
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto 0px;
+}
+
+.card-home-infos{
+  margin-top: 70px;
 }
 
 .flip-box {
