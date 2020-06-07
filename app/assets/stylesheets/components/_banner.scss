@@ -5,11 +5,31 @@
   height: 400px;
 }
 
+.banner-home-infos{
+  text-shadow: 1px 1px 1px black;
+  padding-top: 50px;
+}
+
+.banner-home-title {
+  font-size: 16px;
+  text-align:center;
+  margin-top: 70px;
+  font-family: 'Bellota', cursive;
+}
+
+.banner-home-title h1{
+  font-family: 'Amatic SC', cursive;
+  font-size: 108px;
+  text-align:center;
+}
+
 #banner-typed-text{
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Bellota', cursive;
   color:#ff8246;
 }
 
 #banner-typed-text-fixed{
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Bellota', cursive;
 }
+
+

@@ -1,14 +1,14 @@
 <div>
   <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')">
-      <div class="card-home-first">
-        <div class='card-home-title'>
+      <div class="banner-home-infos">
+        <div class='banner-home-title'>
           <h1>#tralha.app</h1>
 
             <p id="banner-typed-text-fixed"> Descartar com a gente é
             <span id="banner-typed-text"></span>
             </p>
 
-            <div class="card-home-infos text-center">
+            <div class="banner-home-infos text-center">
               <% if current_user && current_user.role == "receiver" %>
                 <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
               <% else %>
@@ -16,20 +16,19 @@
               <% end %>
             </div>
         </div>
-
      </div>
   </div>
-</div>
+
 
 <div class='container'>
-  <div class="card-home-second" id="anchor-link" >
+  <div class="card-rene" id="anchor-link" >
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <hgroup class="speech-bubble">
         <h4>Eu sou Renê Descartes</h4>
-        <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <strong>aqui</strong> como funciona!</p>
+        <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <span id="rene-link">aqui</span> como funciona !</p>
       </hgroup>
     </div>
-    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+    <div class="img-rene pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <%= image_tag "renezin.png" %>
 
     </div>
@@ -45,6 +44,7 @@
 
   </div>
 
+</div>
 </div>
 
     <!--     <div class="text-center pt-5">
