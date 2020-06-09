@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
+import { animeScroll } from '../components/animation';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,4 +33,5 @@ import { loadDynamicBannerText } from '../components/banner';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
     loadDynamicBannerText();
+    animeScroll();
 });
