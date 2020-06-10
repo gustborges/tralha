@@ -2,7 +2,7 @@
   background-size: cover;
   color:white;
   opacity: 0.8;
-  height: 400px;
+  height: 500px;
 }
 
 .banner-home-infos{
@@ -14,7 +14,7 @@
   font-size: 16px;
   text-align:center;
   margin-top: 70px;
-  font-family: 'Bellota', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 .banner-home-title h1{
@@ -22,6 +22,59 @@
   font-size: 108px;
   text-align:center;
 }
+
+.banner-home-curious{
+  font-family: 'Roboto', sans-serif;
+}
+
+.title{
+  font-family: 'Bellota', cursive;
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 1px black;
+  color:white;
+}
+
+.curious-one{
+  background-color: $salmon;
+  height: 140px;
+  width: 260px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  margin: 16px auto;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+ .curious-two{
+  background-color: $salmon;
+  height: 140px;
+  width: 260px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  margin: 16px auto;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.curious-three{
+  background-color: $salmon;
+  height: 140px;
+  width: 260px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  margin: 16px auto;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
 
 #banner-typed-text{
   font-family: 'Bellota', cursive;

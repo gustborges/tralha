@@ -1,5 +1,5 @@
 <div>
-
+<!--
 <div class='container'>
   <div class="card-rene" id="anchor-link" >
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
@@ -14,14 +14,7 @@
       <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <span id="rene-link">aqui</span> como funciona !</p>
     </div>
   </div>
-  <div class="banner-home-infos text-center">
-    <% if current_user && current_user.role == "receiver" %>
-      <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
-    <% else %>
-      <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
-    <% end %>
-  </div>
-</div>
+</div> -->
 
   <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')">
       <div class="banner-home-infos">
@@ -37,45 +30,94 @@
   </div>
 
   <div class="container">
-    <div class='card-home-third'>
-      <div class='card-passos'>
-        <h2>Passo a Passo</h2>
+    <div class="banner-home-curious">
+      <div>
+        <h2 class= "title"> #você sabia?</h2>
       </div>
-      <div class='passos'>
+      <div class="curious-one ">
+        <p>No último ano o Brasil registrou 79 milhões de toneladas de resíduos sólidos. Isso mesmo, <strong>79 milhões!</strong> Cerca de 1kg de lixo para cara habitante por dia!  </p>
+      </div>
+      <div class="curious-two">
+        <p>Com o potencial de 30% do lixo produzido, apenas 3% é reaproveitado ou reciclado </p>
+      </div>
+      <div class="curious-three">
+        <p>Este ano a Política Nacional de Resíduos Sólidos completa 10 anos de existência e segue desconhecida por muitos de nós! Saiba mais sobre a PNRS <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="blank"><strong>aqui</strong></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-home-infos text-center">
+    <% if current_user && current_user.role == "receiver" %>
+      <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
+    <% else %>
+      <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class='card-home-third'>
+      <div class='title card-passos'>
+        <h2> #passo a passo</h2>
+      </div>
+      <div>
         <div class="d-flex">
           <div class="rounded rounded-circle" data-anime="left"> 1 </div>
-          <div data-anime="right"> descrição do passo aqui</div>
+          <div>
+            <div data-anime="right" class="animation-step">
+              <p>faça o seu cadastro ou se já fizer parte da nossa comunidade, entre com seu email e senha</p>
+            </div>
+          </div>
         </div>
         <div class="d-flex">
           <div class="rounded rounded-circle" data-anime="left"> 2 </div>
-          <div data-anime="right"> descrição do passo aqui</div>
+          <div data-anime="right" class="animation-step">
+            <p>cadastre a tralha que deseja se desfazer</p>
+          </div>
         </div>
         <div class="d-flex">
           <div class="rounded rounded-circle" data-anime="left"> 3 </div>
-          <div data-anime="right"> descrição do passo aqui</div>
+           <div data-anime="right" class="animation-step">
+            <p>sua tralha pode ser útil para os outros! aguarde alguém entrar em contato com você</p>
+          </div>
         </div>
         <div class="d-flex">
           <div class="rounded rounded-circle" data-anime="left"> 4 </div>
-          <div data-anime="right"> descrição do passo aqui</div>
+          <div data-anime="right" class="animation-step">
+            <p>não tiveram interesse na sua trabalha? não tem problema, <strong> é hora de reciclar! </strong> após 7 dias você receberá uma notificação com os centros de reciclagem mais próximos de você! </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1584811643967-a4b023332dbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
+    <div class="banner-home-infos">
+      <div class='banner-home-title'>
+        <h2>Faça parte da nossa comunidade com mais de</h2>
+        <h1>3.540</h1>
+        <h2>doadores</h2>
+
+      </div>
+     </div>
+  </div>
+
   <div class="container">
-    <h2>Depoimentos</h2>
+    <h2 class='title'>#depoimentos</h2>
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <hgroup class="speech-bubble">
         <p>Descrição da experiencia do usuario</p>
       </hgroup>
     </div>
-    <div class="avatar-large pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
-      <%= image_tag "profile-pic.jpg" %>
+    <div class="avatar-extra-large-right">
+      <%= image_tag "profile-pic.jpg"%>
     </div>
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <hgroup class="speech-bubble">
         <p>Descrição da experiencia do usuario</p>
       </hgroup>
+    </div>
+    <div class="avatar-extra-large-left">
+      <%= image_tag "profile-pic.jpg"%>
     </div>
 
 
