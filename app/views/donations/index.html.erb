@@ -1,44 +1,105 @@
-<div class='container'>
-  <div class="mt-3 mb-3">
-  <p class="gray-category">DOAÇÕES</p>
-  <% if current_user.receiver? %>
-      <h2 class="dark-description salmon-underline">Veja aqui todas as doações disponíveis para você</h2>
-      <p>Essa é uma lista de doações compatíveis com o seu perfil. Selecione as que você deseja para a sua instituição. É só clicar no <strong>➕</strong>. O doador receberá uma notificação e você terá um retorno da solicitação em até 7 dias! 🚀</p>
-      <p>É ansioso e não quer esperar? 🙄 Entre na doação e fale <strong>agora</strong> com o doador!</p>
-    <% else %>
-      <h2 class="dark-description salmon-underline">Veja aqui todas as suas doações</h2>
-          <p>Essa é a lista de suas doações já publicadas aqui no <strong>#tralha.app</strong>. Continue doando!</p>
-    <% end %>
+<% if current_user.receiver? %>
+  <div class='container' style="min-height: 0vh">
+    <div class="mt-3 mb-3">
+      <h2>Veja as doações disponíveis</h2>
+    </div>
   </div>
-  <div class='row'>
-      <% @donations.each do |donation| %>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
           <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
-              <%= link_to donation_path(donation) do  %>
+              <%= link_to donation_path(@donations.first) do  %>
                 <div class='card mb-4 round-borders shadow fixed-height-card'>
+                  <% if @donations.first.photo.attached? %>
+                    <%= cl_image_tag @donations.first.photo.key, class: "card-img-top rounded-top", crop: :fill%>
+                  <% else %>
+                    <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: @donations.first.name %>
+                  <% end %>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="card-body">
+                        <h5 class="card-title small gray-category"><%= @donations.first.category.name.upcase %></h5>
+                        <h5 class="salmon-title"><%= @donations.first.name.capitalize %></h5>
+                        <p class="dark-description"><%= @donations.first.description %></p>
+                      </div>
+                    </div>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <% @donations[1..-1].each do |donation| %>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
+                <%= link_to donation_path(donation) do  %>
+                  <div class='card mb-4 round-borders shadow fixed-height-card'>
+                    <% if donation.photo.attached? %>
+                      <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
+                    <% else %>
+                      <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
+                    <% end %>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="card-body">
+                          <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
+                          <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
+                          <p class="dark-description"><%= donation.description %></p>
+                        </div>
+                      </div>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<% else %>
+  <div class="container">
+    <div class="tittle mt-3 mb-3">
+      <h2><mark class="name">Olá <%= current_user.name.capitalize %>,</mark><br>estas são as suas doações:</h2>
+    </div>
+    <div class='row'>
+      <% @donations.each do |donation| %>
+          <div class="effect col-sm-12 col-md-6 col-lg-4 no-decoration">
+              <%= link_to donation_path(donation) do  %>
+                <div class="card-product justify-content-start">
                   <% if donation.photo.attached? %>
                     <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
                   <% else %>
                     <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
                   <% end %>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="card-body">
-                        <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
-                        <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
-                        <p class="dark-description"><%= donation.description %></p>
+                  <div>
+                    <div class="card-body">
+                      <h3><%= donation.name.capitalize %></h5>
+                      <h5><%= donation.category.name.upcase %></h5>
+                    </div card-content>
+                    <% if donation.status == "open" %>
+                      <div class="status-position">
+                        <p class="donation-open">Disponível</p>
                       </div>
-                      <% if current_user.receiver? %>
-                        <%= link_to donation_transfers_path(donation), method: :post, remote: true,  id:"create_transfer_#{donation.id}" do  %>
-                          <div class="wrapper perfect-circle-add-button mr-4 d-flex justify-content-center align-items-center p-0">
-                            <h3 class="mt-1 text-light font-weight-bold">+<h3>
-                          </div>
-                        <% end %>
-                        <% end %>
-                    </div>
+                    <% elsif donation.status == "progress" %>
+                      <div class="status-position">
+                        <p class="donation-closed">Em Andamento</p>
+                      </div>
+                    <% elsif donation.status == "closed" %>
+                      <div class="status-position">
+                        <p class="donation-closed">Doado</p>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               <% end %>
           </div>
       <% end %>
+    </div>
   </div>
-</div>
-
-
+<% end %>

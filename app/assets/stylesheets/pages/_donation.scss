@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 
 
-.donation-tittle h2{
+.donation-title h2{
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: #393e46;
 }
 
-.donation-tittle img {
+.donation-title img {
   border-radius: 8px;
 }
 
@@ -25,7 +25,7 @@
   // margin: 7.5% 0;
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -73,22 +73,27 @@
 }
 
 .card-donation-receiver{
-  margin: 4px;
+
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 10px;
-  margin-right: 10px;
-  margin-top: 20px;
   color: black;
-  width: 170px;
   box-shadow:0 0 11px 0px cadetblue;
+  margin-left: -5px;
+  margin-right: -5px;
+  padding: 8px;
 }
 
+.section {
+  background-color: #b9e1dc;
+}
 
+.oneDonation {
+  min-height: 65vh;
+}
 
