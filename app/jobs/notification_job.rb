@@ -1,10 +1,8 @@
 class NotificationJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    # Do something later
-    puts "I'm starting the fake job"
-    sleep 3
-    puts "OK I'm done now"
-  end
+  def perform(donation_id)
+    return "Que pena! #{User.donation_id.name} ainda não recebeu pedidos. Clique aqui para ver como reciclar."
+    # ainda é preciso terminar o rake + adicionar a parte de mailing
+    end
 end

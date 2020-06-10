@@ -42,8 +42,7 @@ class DonationsController < ApplicationController
     if @donation.save
       @receivers = ReceiverProfile.where(category_id: @donation.category_id)
       @receivers.each { |receiver| Notification.create(title: "Nova doação disponível: #{@donation.name} de #{current_user.name}", user: receiver.user) }
-
-    redirect_to donation_path(@donation)
+      redirect_to donation_path(@donation)
     else
       render 'donations/new'
     end
