@@ -136,6 +136,18 @@
   font-size: 18px;
 }
 
+.cardsRene {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardsRene h3 {
+  font-size: 18px;
+}
+
 .card-product {
   overflow: hidden;
   height: 100px;
@@ -231,3 +243,9 @@
 .hello {
   font-size: 21px;
 }
+
+.card-user {
+  background-color: white;
+  margin: 10px;
+}
+
