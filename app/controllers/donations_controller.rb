@@ -66,10 +66,16 @@ class DonationsController < ApplicationController
 
   def update
     @donation = Donation.find(params[:id])
-    if @donation.update(donation_params)
+    if params[:status]
+      @donation.status = params[:status]
+      @donation.save
       redirect_to donation_path(@donation)
     else
-      render :edit
+      if @donation.update(donation_params)
+        redirect_to donation_path(@donation)
+      else
+        render :edit
+      end
     end
   end
 
