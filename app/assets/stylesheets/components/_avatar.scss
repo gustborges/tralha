@@ -21,6 +21,20 @@
   border: white 1px solid;
 }
 
+.avatar-extra-large-right img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 16px auto;
+}
+
+.avatar-extra-large-left img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 16px auto;
+}
+
 .contador{
   font-family: 'Luckiest Guy', cursive;
 }
