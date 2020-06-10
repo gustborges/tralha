@@ -26,8 +26,19 @@
 }
 
 .img-rene img {
-  width: 500px;
+  width: 250px;
+  margin-left: 200px;
 }
+
+#rene-link{
+  color:red;
+}
+
+#rene-link:hover{
+  font-size:17px;
+  cursor: pointer;
+}
+
 
 
 /* Remaining CSS3 Animation */

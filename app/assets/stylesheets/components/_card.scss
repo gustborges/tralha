@@ -94,34 +94,48 @@
   margin-top: 6px;
 }
 
-.card-home-first{
-  text-shadow: 1px 1px 2px black;
-}
-
-.card-home-title h1{
-  font-family: 'Balsamiq Sans', cursive;
-  font-size: 64px;
-  text-align:center;
-}
-
-.card-home-title {
-  font-size: 16px;
-  text-align:center;
-}
-
 .card-home-second img{
   width:400px;
   height:400px;
+}
+
+.card-rene {
+   font-family: 'Bellota', cursive;
+}
+
+.card-rene h4{
+   font-family: 'Bellota', cursive;
 }
 
 .card-home-second-infos{
   color:black;
 }
 
+.card-home-third-infos{
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto 0px;
+}
+
+.card-home-infos{
+  margin-top: 70px;
+}
+
 .flip-box {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+
+
+.rounded {
+  background-color: $salmon;
+  padding: 24px;
+  font-size: 24px;
+  margin-bottom: 120px;
+  }
 
 
 .cards{
@@ -240,12 +254,8 @@
   font-size: 20px;
 }
 
+
 .hello {
   font-size: 21px;
-}
-
-.card-user {
-  background-color: white;
-  margin: 10px;
 }
 
