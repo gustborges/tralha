@@ -1,4 +1,28 @@
 <div>
+
+<div class='container'>
+  <div class="card-rene" id="anchor-link" >
+    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <hgroup class="speech-bubble">
+        <h4>Eu sou Renê Descartes</h4>
+      </hgroup>
+    </div>
+    <div class="img-rene pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <%= image_tag "renezin.png" %>
+    </div>
+    <div>
+      <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <span id="rene-link">aqui</span> como funciona !</p>
+    </div>
+  </div>
+  <div class="banner-home-infos text-center">
+    <% if current_user && current_user.role == "receiver" %>
+      <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
+    <% else %>
+      <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
+    <% end %>
+  </div>
+</div>
+
   <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')">
       <div class="banner-home-infos">
         <div class='banner-home-title'>
@@ -8,49 +32,53 @@
             <span id="banner-typed-text"></span>
             </p>
 
-            <div class="banner-home-infos text-center">
-              <% if current_user && current_user.role == "receiver" %>
-                <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
-              <% else %>
-                <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
-              <% end %>
-            </div>
         </div>
      </div>
   </div>
 
+  <div class="container">
+    <div class='card-home-third'>
+      <div class='card-passos'>
+        <h2>Passo a Passo</h2>
+      </div>
+      <div class='passos'>
+        <div class="d-flex">
+          <div class="rounded rounded-circle" data-anime="left"> 1 </div>
+          <div data-anime="right"> descrição do passo aqui</div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded rounded-circle" data-anime="left"> 2 </div>
+          <div data-anime="right"> descrição do passo aqui</div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded rounded-circle" data-anime="left"> 3 </div>
+          <div data-anime="right"> descrição do passo aqui</div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded rounded-circle" data-anime="left"> 4 </div>
+          <div data-anime="right"> descrição do passo aqui</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class='container'>
-  <div class="card-rene" id="anchor-link" >
+  <div class="container">
+    <h2>Depoimentos</h2>
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
-      <hgroup class="speech-bubble" data-anime="left" >
-        <h4>Eu sou Renê Descartes</h4>
-        <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <span id="rene-link">aqui</span> como funciona !</p>
+      <hgroup class="speech-bubble">
+        <p>Descrição da experiencia do usuario</p>
       </hgroup>
     </div>
-    <div class="img-rene pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center" data-anime="right">
-      <%= image_tag "renezin.png" %>
-
+    <div class="avatar-large pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <%= image_tag "profile-pic.jpg" %>
     </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class='card-home-third'>
-    <div class='card-home-third-infos'>
-      <p>Voce sabia?</p>
+    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <hgroup class="speech-bubble">
+        <p>Descrição da experiencia do usuario</p>
+      </hgroup>
     </div>
 
 
   </div>
-
 </div>
-</div>
-
-    <!--     <div class="text-center pt-5">
-          <%= link_to "#anchor-link", class:"anchor-link" do %>
-          <img src="https://kids.niehs.nih.gov/resources/images/icon-hero-down.svg" alt="" width="141">
-          <% end %>
-        </div> -->
-
 
