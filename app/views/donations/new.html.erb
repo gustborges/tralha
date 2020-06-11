@@ -6,13 +6,10 @@
   </div>
 <div class="form-container">
   <br>
-  <div class="form-question">
+  <div class="container form">
     <h2>Vamos nos livrar da sua tralha!</h2>
-    <p>Conta pra gente: o que está te incomodando e poderia fazer bem a outra pessoa?</p>
   </div>
-
-
-  <div class="form-box">
+  <div class="container">
     <%= simple_form_for @donation do |f| %>
       <div class="form-inputs">
           <%= f.association :category, label: "Tipo de doação" %>
