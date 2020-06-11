@@ -23,19 +23,24 @@
   background-color:white;
 }
 
-.fa-home{
+.fa{
   font-size: 32px;
   color:white;
   text-shadow: 1px 1px 2px black;
   position: absolute;
-  margin-left: 10px;
-}
-.fa-home:hover {
-  font-size: 33px;
-  text-decoration: none;
-  color:white;
+  margin-top: -18px;
 }
 
-.fa-home::before {
-  content: none;
-}
+// i::before, i::after {
+//   font-family: "Font Awesome 5 free";
+//   content: '\f292';
+//   color:white;
+// }
+
+
+
+/*Subclasse do icone do fontawesome. Normalmente não aparece o conteudo, mas se aparecer descomenta aqui embaixo*/
+
+// .fa-hashtag::before {
+//   content: none;
+// }
