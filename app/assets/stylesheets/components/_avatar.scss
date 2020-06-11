@@ -35,9 +35,6 @@
   margin: 16px auto;
 }
 
-.contador{
-  font-family: 'Luckiest Guy', cursive;
-}
 
 .avatar-number{
   width: 40px;
@@ -45,12 +42,16 @@
 }
 
 .contador{
-  border-radius: 78%;
-  background-color: #FD604E;
-  text-align: center;
-  width: 60%;
-  margin-top: -26px;
-  margin-left: -8px;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: #F36436;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 50%;
+  width: 20px;
+  height: 0px;
+  padding-left: 4px;
+  margin-left: -11px;
+  padding-block-end: 24px;
 }
 
 li {
