@@ -1,6 +1,7 @@
 
 const rene = document.getElementById('rene');
 const bubble2 = document.querySelector(".speech-bubble2");
+const click = document.querySelector(".clique-rene");
 
 const bigRene = () => {
     rene.classList.toggle('reneBig');
@@ -8,7 +9,7 @@ const bigRene = () => {
 };
 
 
-rene.addEventListener('click', (event) => {
+click.addEventListener('click', (event) => {
   event.preventDefault();
   bigRene();
 });
