@@ -27,6 +27,8 @@ import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
 import { animeScroll } from '../components/animation';
+import { bigRene } from '../components/rene';
+
 
 // import "mapbox-gl/dist/mapbox-gl.css";
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
