@@ -25,6 +25,10 @@
         </div>
 
       </div>
+      <div class="donation-description">
+        <br>
+        <p><%= @donation.description.capitalize %></p>
+      </div>
       <div class="d-flex justify-content-center">
         <%= link_to donation_path(@donation, status: "open"), method: :put, remote: true do %>
           <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> m-2 ">Disponível</div>
@@ -33,10 +37,6 @@
           <div class="btn btn-status <%= @donation.status == "closed" ? "btn-secondary" : "btn-outline-secondary" %> m-2">Doado</div>
         <% end %>
 
-      </div>
-      <div class="donation-description">
-        <br>
-        <p><%= @donation.description.capitalize %></p>
       </div>
     </div>
   </div>
