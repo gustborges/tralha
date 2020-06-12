@@ -11,8 +11,11 @@ class DonationsController < ApplicationController
       end
 
       @profile_categories.each do |category|
-        @donations = Donation.where(category: category)
+        @donations = Donation.includes(:user).where(category: category)
       end
+      users_ids = User.near([current_user.latitude, current_user.longitude], 3000, :order => :distance).collect{ |a| a.id }
+      @donations = @donations.where(:user_id =>  users_ids).order(created_at: :desc)
+      # @donations = @donations.order(created_at: :desc)
     else
       @donations = current_user.donations
     end
@@ -65,10 +68,16 @@ class DonationsController < ApplicationController
 
   def update
     @donation = Donation.find(params[:id])
-    if @donation.update(donation_params)
+    if params[:status]
+      @donation.status = params[:status]
+      @donation.save
       redirect_to donation_path(@donation)
     else
-      render :edit
+      if @donation.update(donation_params)
+        redirect_to donation_path(@donation)
+      else
+        render :edit
+      end
     end
   end
 

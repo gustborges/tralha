@@ -5,15 +5,15 @@
 }
 
 .form-container{
-  margin: auto;
+  margin: 0px auto;
   padding: 60px;
   align-items:center;
   display:flex;
   flex-direction:column;
 }
 
-.form-container h2 {
-  font-family: 'Balsamiq Sans', cursive;
+.form-container h2{
+  font-family: 'Bellota Text', cursive;
   color:white;
   font-size: 56px;
   font-weight: bold;
@@ -29,7 +29,7 @@
 }
 
 .form-inputs{
-  width: 400px;
+  min-width: 100px;
 }
 
 .form-actions {
@@ -76,3 +76,8 @@
   color:#EE5B4D;
 }
 
+.container.form {
+  width: 80%;
+  min-height: 0vh;
+  padding-top: 0px;
+}

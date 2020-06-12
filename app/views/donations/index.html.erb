@@ -1,66 +1,32 @@
 <% if current_user.receiver? %>
   <div class='container' style="min-height: 0vh">
     <div class="mt-3 mb-3">
-      <h2>Veja as doações disponíveis</h2>
+      <h2 class="hello"><mark class="name"> Olá <%= current_user.name.capitalize %>,</mark> veja as doações disponíveis:</h2>
     </div>
-  </div>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container">
-          <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
-              <%= link_to donation_path(@donations.first) do  %>
-                <div class='card mb-4 round-borders shadow fixed-height-card'>
-                  <% if @donations.first.photo.attached? %>
-                    <%= cl_image_tag @donations.first.photo.key, class: "card-img-top rounded-top", crop: :fill%>
-                  <% else %>
-                    <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: @donations.first.name %>
-                  <% end %>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="card-body">
-                        <h5 class="card-title small gray-category"><%= @donations.first.category.name.upcase %></h5>
-                        <h5 class="salmon-title"><%= @donations.first.name.capitalize %></h5>
-                        <p class="dark-description"><%= @donations.first.description %></p>
-                      </div>
-                    </div>
-                </div>
+    <div class="row">
+      <% @donations.each do |donation| %>
+        <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
+          <%= link_to donation_path(donation) do  %>
+            <div class="card-product justify-content-start">
+              <% if donation.photo.attached? %>
+                <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
+              <% else %>
+                <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
               <% end %>
-          </div>
-        </div>
-      </div>
-      <% @donations[1..-1].each do |donation| %>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
-                <%= link_to donation_path(donation) do  %>
-                  <div class='card mb-4 round-borders shadow fixed-height-card'>
-                    <% if donation.photo.attached? %>
-                      <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
-                    <% else %>
-                      <%= image_tag "old_furniture.jpg", class: "card-img-top rounded-top", alt: donation.name %>
-                    <% end %>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="card-body">
-                          <h5 class="card-title small gray-category"><%= donation.category.name.upcase %></h5>
-                          <h5 class="salmon-title"><%= donation.name.capitalize %></h5>
-                          <p class="dark-description"><%= donation.description %></p>
-                        </div>
-                      </div>
-                  </div>
-                <% end %>
+              <div class="card-body">
+                <h3><%= donation.name.capitalize %></h3>
+                <h5><%= donation.category.name.upcase %></h5>
+                <h5><%= Geocoder::Calculations.distance_between(
+                        [current_user.latitude, current_user.longitude],
+                        [donation.user.latitude, donation.user.longitude]
+                        ).to_i %> km
+                </h5>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 <% else %>
   <div class="container">

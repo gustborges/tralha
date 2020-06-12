@@ -1,38 +1,133 @@
 <div>
-  <div class="banner" style="background-image: url('https://www.moneycrashers.com/wp-content/uploads/2011/12/donate-clothes-box-1068x713.jpg')">
-      <div class="card-home-first pt-5" >
-        <div class='card-home-title'>
-          <h1>#tralha.app</h1>
-          <h5>Descartes com Sabedoria</h5>
-        </div>
-        <div class="card-home-infos text-center m-5 ">
-          <div>
-            <% if current_user && current_user.role == "receiver" %>
-              <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
-            <% else %>
-                <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
-            <% end %>
-          </div>
-        </div>
-        <div class="text-center pt-5">
-          <%= link_to "#anchor-link", class:"anchor-link" do %>
-          <img src="https://kids.niehs.nih.gov/resources/images/icon-hero-down.svg" alt="" width="141">
-          <% end %>
-        </div>
-      </div>
-  </div>
-</div>
+<!--
 <div class='container'>
-  <div class="card-home-second row" id="anchor-link" >
+  <div class="card-rene" id="anchor-link" >
     <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
       <hgroup class="speech-bubble">
         <h4>Eu sou Renê Descartes</h4>
-        <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Você ainda colabora para que outras pessoas possam usufruir daquele seu sofá que você não gosta mais.</p>
       </hgroup>
     </div>
-    <div class="pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+    <div class="img-rene pr-0 pb-0 col-sm-12 col-md-12 d-flex justify-content-center">
+      <%= image_tag "renezin.png" %>
+    </div>
+    <div>
+      <p>Ajudarei você a descartar a sua tralha sem comprometer o meio ambiente. Veja <span id="rene-link">aqui</span> como funciona !</p>
+    </div>
+  </div>
+</div> -->
+
+  <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')">
+      <div class="banner-home-infos">
+        <div class='banner-home-title'>
+          <h1>#tralha.app</h1>
+
+            <p id="banner-typed-text-fixed"> Descartar com a gente é
+            <span id="banner-typed-text"></span>
+            </p>
+
+        </div>
+     </div>
+  </div>
+
+  <div class="container">
+    <div class="banner-home-curious">
+      <div>
+        <h2 class= "title"> #você sabia?</h2>
+      </div>
+      <div class="curious-one ">
+        <p>No último ano o Brasil registrou 79 milhões de toneladas de resíduos sólidos. Isso mesmo, <strong>79 milhões!</strong> Cerca de 1kg de lixo para cara habitante por dia!  </p>
+      </div>
+      <div class="curious-two">
+        <p>Com o potencial de 30% do lixo produzido, apenas 3% é reaproveitado ou reciclado </p>
+      </div>
+      <div class="curious-three">
+        <p>Este ano a Política Nacional de Resíduos Sólidos completa 10 anos de existência e segue desconhecida por muitos de nós! Saiba mais sobre a PNRS <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="blank"><strong>aqui</strong></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-home-infos text-center">
+    <% if current_user && current_user.role == "receiver" %>
+      <%= link_to "Veja suas Doações", donations_path, class: "btn-hover" %>
+    <% else %>
+      <%= link_to "Comece a doar", new_donation_path, class: "btn-hover" %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class='card-home-third'>
+      <div class='title card-passos'>
+        <h2> #passo a passo</h2>
+      </div>
+      <div>
+        <div class="d-flex">
+          <div class="rounded-circle anime-first" data-anime="left"> 1 </div>
+          <div>
+            <div data-anime="right" class="animation-step anime-first">
+              <p>faça o seu cadastro ou se já fizer parte da nossa comunidade, entre com seu email e senha</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded-circle anime-second" data-anime="left"> 2 </div>
+          <div data-anime="right" class="animation-step anime-second">
+            <p>cadastre a tralha que deseja se desfazer</p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded-circle anime-third" data-anime="left"> 3 </div>
+           <div data-anime="right" class="animation-step anime-third">
+            <p>sua tralha pode ser útil para os outros! aguarde alguém entrar em contato com você</p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="rounded-circle anime-forth" data-anime="left"> 4 </div>
+          <div data-anime="right" class="animation-step anime-forth">
+            <p>não tiveram interesse na sua trabalha? não tem problema, <strong> é hora de reciclar! </strong> após 7 dias você receberá uma notificação com os centros de reciclagem mais próximos de você! </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-home" style="background-image: url('https://images.unsplash.com/photo-1584811643967-a4b023332dbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
+    <div class="banner-home-infos">
+      <div class='banner-home-title'>
+        <h2>Faça parte da nossa comunidade com mais de</h2>
+        <h1>3.540</h1>
+        <h2>doadores</h2>
+
+      </div>
+     </div>
+  </div>
+
+  <div class="container">
+    <h2 class='title'>#depoimentos</h2>
+    <div class="bigBox pr-0 pb-0 col-sm-12 col-md-12 d-flex-column">
+      <div class="smallBox-left d-flex">
+        <p><i>"Nunca foi tão fácil me desfazer da minha coleção de livros!"</i></p>
+      </div>
+      <div class="avatar-square-medium avatar-right d-flex mt-3">
+        <%= image_tag "profile-pic.jpg"%>
+      </div>
+    </div>
+    <div class="bigBox pr-0 pb-0 col-sm-12 col-md-12 d-flex-column">
+      <div class="smallBox-right d-flex mt-5">
+        <p><i>"Consegui uma cadeira semi-usada ."</i></p>
+      </div>
+      <div class="avatar-square-medium avatar-left d-flex mt-3">
+        <%= image_tag "profile-pic-2.jpg"%>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <div id="rene" class="reneSmall">
+    <div class="speech-bubble2 speech-bubble2hidden">
+      <p>Olá, eu sou o René e estou aqui para te ajudar. Vamos começar a doar? <%= link_to "Clica aqui", new_donation_path %> </p>
+    </div>
+    <div class="clique-rene">
       <%= image_tag "renezin.png" %>
     </div>
   </div>
-</div>
 

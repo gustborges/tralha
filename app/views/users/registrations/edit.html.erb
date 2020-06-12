@@ -1,9 +1,10 @@
 <body class="form-body">
-  <%= link_to root_path, class: "fa-home" do %>
-    <i class="fas fa-hashtag"></i>
-  <% end %>
-
-<div class="form-container">
+   <div class='mt-5 ml-4'>
+    <%= link_to root_path do %>
+      <i class='fa'>&#xf292</i>
+    <% end %>
+  </div>
+<div class="container form">
   <h2 style="text-align: center">Editar seu perfil</h2>
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, class: "profile-pic", width: 50, height: 50, crop: :thumb, gravity: :face %>
@@ -11,7 +12,7 @@
       <%= image_tag "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png", class: "profile", width: 75, height: 75, crop: :thumb %>
     <% end %>
 
-  <div class= "form-box">
+  <div class= "container">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 

@@ -1,12 +1,12 @@
-<body class="form-body">
-  <%= link_to root_path, class: "fa-home" do %>
-    <i class="fas fa-hashtag"></i>
-  <% end %>
 
-  <div class="form-container">
-    <h2>Entrar</h2 >
+  <div class='mt-5 ml-4'>
+    <%= link_to root_path do %>
+      <i class='fa'>&#xf292</i>
+    <% end %>
+  </div>
 
-    <div class="form-box">
+    <div class="container">
+      <h2 style="text-align: center;">Entrar</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="form-inputs">
@@ -29,8 +29,7 @@
         </div>
       <% end %>
     </div>
-  </div>
-</body>
+
 <!--
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');

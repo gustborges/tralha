@@ -21,9 +21,45 @@
   border: white 1px solid;
 }
 
-.contador{
-  font-family: 'Luckiest Guy', cursive;
+
+.avatar-left{
+ justify-content: left;
 }
+
+.avatar-right{
+ justify-content: right;
+}
+
+.avatar-square-medium img{
+  width: 180px;
+  height:200px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+.avatar-right img{
+  justify-content: right;
+}
+
+.avatar-left img{
+  justify-content: left;
+ }
+
+.avatar-extra-large-right img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 16px auto;
+}
+
+.avatar-extra-large-left img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 16px auto;
+}
+
 
 .avatar-number{
   width: 40px;
@@ -31,12 +67,16 @@
 }
 
 .contador{
-  border-radius: 78%;
-  background-color: #FD604E;
-  text-align: center;
-  width: 60%;
-  margin-top: -26px;
-  margin-left: -8px;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: #F36436;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 50%;
+  width: 20px;
+  height: 0px;
+  padding-left: 4px;
+  margin-left: -11px;
+  padding-block-end: 24px;
 }
 
 li {

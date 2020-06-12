@@ -1,53 +1,63 @@
-#rene p {
-  color: #2A2D35;
-  font-family: "Helvetica", sans-serif;
-  text-transform: uppercase;
-  font-size: 2.5em;
-  font-weight: bold;
-  margin: 1px 0 0 1px;
-  white-space: normal;
-  overflow: hidden;
-  width: 10em;
+
+
+.reneSmall {
+  img {
+    width: 150px;
+    margin-left: 100px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    }
+  }
+
+
+.reneBig {
+  background-color: rgba(255, 0, 0, 0.4);
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  top:0;
+  left:0;
+  position: fixed;
+  img {
+    width: 360px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  p {
+    padding: 1em;
+  }
 }
 
-#rene p {
-  animation: type 4s steps(60, end), forwards;
-  /* Chrome and Safari Optimisation */
-  -webkit-animation: type 4s steps(60, end), forwards;
-  /* Firefox Optimisation */
-  -moz-animation: type 4s steps(60, end);
-  /* Opera Optimisation */
-  o-animation: type 4s steps(60, end);
 
+    .speech-bubble2 {
+    position: fixed;
+    background: white;
+    border-radius: .4em;
+    width: 72%;
+    height: 17%;
+    bottom: 386px;
+    left: 50px;
+    }
+    .speech-bubble2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 18%;
+      width: 0;
+      height: 0;
+      border: 36px solid transparent;
+      border-top-color: white;
+      border-bottom: 0;
+      border-right: 0;
+      margin-left: -18px;
+      margin-bottom: -36px;
+    }
+
+.speech-bubble2hidden {
+    visibility: hidden;
 }
-
-#rene {
-  width:50%;
-}
-
-.img-rene img {
-  width: 500px;
-}
-
-
-/* Remaining CSS3 Animation */
-
-@keyframes type {
-    from { width: 0; }
-}
-
-/* Chrome and Safari Optimisation */
-@-webkit-keyframes type {
-    from { width: 0; }
-}
-
-/* Firefox Optimisation */
-@-moz-keyframes type {
-    from { width: 0; }
-}
-
-/* Opera Optimisation */
-@-o-keyframes type {
-    from { width: 0; }
-}
-
