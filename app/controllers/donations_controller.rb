@@ -11,8 +11,11 @@ class DonationsController < ApplicationController
       end
 
       @profile_categories.each do |category|
-        @donations = Donation.where(category: category)
+        @donations = Donation.includes(:user).where(category: category)
       end
+      users_ids = User.near([current_user.latitude, current_user.longitude], 3000, :order => :distance).collect{ |a| a.id }
+      @donations = @donations.where(:user_id =>  users_ids).order(created_at: :desc)
+      # @donations = @donations.order(created_at: :desc)
     else
       @donations = current_user.donations
     end
