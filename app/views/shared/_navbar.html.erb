@@ -19,7 +19,7 @@
       <% if user_signed_in? && current_user.role == "receiver"  %>
         <%= link_to "Você tem #{current_user.notifications.where(read: false).count} novas doações disponíveis", donations_path, class: "dropdown-item" %>
       <% end %>
-      <% if user_signed_in? && current_user.role == "donor"  %>
+      <% if user_signed_in? && (current_user.role == "donor")  %>
         <% current_user.notifications.where(read: false).each do |notification| %>
           <%= link_to "#{notification.title}", users_path, class: "dropdown-item" %>
         <% end %>

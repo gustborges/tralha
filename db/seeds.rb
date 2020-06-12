@@ -255,31 +255,42 @@ puts "creating notifications"
 Notification.create!(user_id: u4.id,
   title: "Nova doação disponível: #{d1.name} de #{u1.name}",
   read: false,
+  recipient: "receiver"
 )
-
 
 Notification.create!(user_id: u5.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
+  recipient: "receiver"
 )
 
 Notification.create!(user_id: u6.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
+  recipient: "receiver"
 )
 
 Notification.create!(user_id: u7.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
+  recipient: "receiver"
 )
 
 Notification.create!(user_id: u8.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
+  recipient: "receiver"
 )
 
 Notification.create!(user_id: u9.id,
   title: "Nova doação disponível: #{d2.name} de #{u2.name}",
   read: false,
+  recipient: "receiver"
+)
+
+Notification.create!(user_id: u1.id,
+  title: "#{d2.name.capitalize} ainda não recebeu pedidos. Veja como reciclar!",
+  read: false,
+  recipient: "donnor"
 )
 
