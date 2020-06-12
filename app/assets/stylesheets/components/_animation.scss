@@ -1,8 +1,23 @@
 // estilo de animação
+.anime-first{
+  transition: 0.4s;
+}
+
+.anime-second{
+  transition: 1s;
+}
+
+.anime-third{
+  transition: 1.6s;
+}
+
+.anime-forth{
+  transition: 2.2s;
+}
 
 [data-anime]{
   opacity:0;
-  transition: .8s;
+
 }
 
 [data-anime="left"]{

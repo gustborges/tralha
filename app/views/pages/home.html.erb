@@ -61,28 +61,28 @@
       </div>
       <div>
         <div class="d-flex">
-          <div class="rounded rounded-circle" data-anime="left"> 1 </div>
+          <div class="rounded-circle anime-first" data-anime="left"> 1 </div>
           <div>
-            <div data-anime="right" class="animation-step">
+            <div data-anime="right" class="animation-step anime-first">
               <p>faça o seu cadastro ou se já fizer parte da nossa comunidade, entre com seu email e senha</p>
             </div>
           </div>
         </div>
         <div class="d-flex">
-          <div class="rounded rounded-circle" data-anime="left"> 2 </div>
-          <div data-anime="right" class="animation-step">
+          <div class="rounded-circle anime-second" data-anime="left"> 2 </div>
+          <div data-anime="right" class="animation-step anime-second">
             <p>cadastre a tralha que deseja se desfazer</p>
           </div>
         </div>
         <div class="d-flex">
-          <div class="rounded rounded-circle" data-anime="left"> 3 </div>
-           <div data-anime="right" class="animation-step">
+          <div class="rounded-circle anime-third" data-anime="left"> 3 </div>
+           <div data-anime="right" class="animation-step anime-third">
             <p>sua tralha pode ser útil para os outros! aguarde alguém entrar em contato com você</p>
           </div>
         </div>
         <div class="d-flex">
-          <div class="rounded rounded-circle" data-anime="left"> 4 </div>
-          <div data-anime="right" class="animation-step">
+          <div class="rounded-circle anime-forth" data-anime="left"> 4 </div>
+          <div data-anime="right" class="animation-step anime-forth">
             <p>não tiveram interesse na sua trabalha? não tem problema, <strong> é hora de reciclar! </strong> após 7 dias você receberá uma notificação com os centros de reciclagem mais próximos de você! </p>
           </div>
         </div>
@@ -122,8 +122,12 @@
 
   </div>
 </div>
-
-  <div id="divRene">
-    <%= image_tag "renezin.png", id: "rene", class: "reneSmall"%>
+  <div id="rene" class="reneSmall">
+    <div class="speech-bubble2 speech-bubble2hidden">
+      <p>Olá, eu sou o René e estou aqui para te ajudar. Vamos começar a doar? <%= link_to "Clica aqui", new_donation_path %> </p>
+    </div>
+    <div class="clique-rene">
+      <%= image_tag "renezin.png" %>
+    </div>
   </div>
 

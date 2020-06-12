@@ -16,6 +16,11 @@
               <div class="card-body">
                 <h3><%= donation.name.capitalize %></h3>
                 <h5><%= donation.category.name.upcase %></h5>
+                <h5><%= Geocoder::Calculations.distance_between(
+                        [current_user.latitude, current_user.longitude],
+                        [donation.user.latitude, donation.user.longitude]
+                        ).to_i %> km
+                </h5>
               </div>
             </div>
           <% end %>
