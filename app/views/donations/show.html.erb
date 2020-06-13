@@ -1,6 +1,6 @@
 <div class="container oneDonation">
   <div class="mt-3 mb-3">
-    <p class="gray-category">DOAÇÕES > <%= @donation.category.name.upcase %></p>
+    <p class="gray-category"><%= link_to "DOAÇÕES >", donations_path %><%= @donation.category.name.upcase %></p>
     <div class="donation-title">
       <h2><%= @donation.name.capitalize %></h2>
       <% if @donation.photo.attached? %>
