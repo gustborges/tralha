@@ -14,6 +14,7 @@ class DonationsController < ApplicationController
         @donations = Donation.includes(:user).where(category: category)
       end
       users_ids = User.near([current_user.latitude, current_user.longitude], 3000, :order => :distance).collect{ |a| a.id }
+      @donations ||= Donation.all.includes(:user)
       @donations = @donations.where(:user_id =>  users_ids).order(created_at: :desc)
       # @donations = @donations.order(created_at: :desc)
     else
