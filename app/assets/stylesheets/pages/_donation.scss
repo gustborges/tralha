@@ -8,7 +8,8 @@
 }
 
 .donation-title img {
-  border-radius: 8px;
+  border-radius: 4px;
+  // width: 90%;
 }
 
 .donor-name {
@@ -58,6 +59,7 @@
 .receivers {
   text-align: justify;
   background-color: #b9e1dc;
+  width: 95%;
 }
 
 .receivers p{
@@ -73,7 +75,6 @@
 }
 
 .card-donation-receiver{
-
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -95,5 +96,20 @@
 
 .oneDonation {
   min-height: 65vh;
+  width: 95%;
 }
 
+.box-name {
+  padding-top: 56px;
+  width: 100%;
+  background-color: #ff8246;
+  min-height: 21vh;
+  padding-left: 2em;
+  box-shadow: 0 4px 13px -5px #777;
+  border-radius: 24px;
+}
+
+.tittle h2 {
+  font-size: 20px;
+  color: white;
+}
