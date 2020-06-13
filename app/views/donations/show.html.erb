@@ -1,81 +1,121 @@
-<div class="container oneDonation">
-  <div class="mt-3 mb-3">
-    <p class="gray-category">DOAÇÕES > <%= @donation.category.name.upcase %></p>
-    <div class="donation-title">
-      <h2><%= @donation.name.capitalize %></h2>
-      <% if @donation.photo.attached? %>
-        <%= cl_image_tag @donation.photo.key, height: 400, width: 500, crop: :fill %>
-      <% else %>
-        <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
-      <% end %>
+  <div class="container oneDonation">
+    <div class="mt-3 mb-3">
+      <br>
+      <p class="gray-category"><%= link_to "DOAÇÕES > ", donations_path %><%= @donation.category.name.upcase %></p>
+      <div class="donation-title">
+        <h2><%= @donation.name.capitalize %></h2>
+        <% if @donation.photo.attached? %>
+          <%= cl_image_tag @donation.photo.key, height: 400, width: 500, crop: :fill %>
+        <% else %>
+          <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
+        <% end %>
+
         <div class="d-flex align-items-center">
           <div class="donor-name">
-            <p class="gray-category">Doação de <%= @donation.user.name.capitalize %></p>
+            <% if current_user.receiver? %>
+              <p class="gray-category">Doação de <%= @donation.user.name.capitalize %></p>
+            <% else %>
+              <div class="d-flex">
+                <% if current_user.donor? %>
+                  <%= link_to "<i class='far fa-trash-alt'></i>".html_safe,
+                    donation_path(@donation),
+                    method: :delete,
+                    data: { confirm: "Tem certeza que quer apagá-la?" },
+                    class: "pl-3 gray-category font-weight-bold"
+                  %>
+                  <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_donation_path(@donation), class: "pl-3 gray-category font-weight-bold" %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-         <div class="d-flex">
-          <% if current_user.donor? %>
-            <%= link_to "<i class='far fa-trash-alt'></i>".html_safe,
-              donation_path(@donation),
-              method: :delete,
-              data: { confirm: "Tem certeza que quer apagá-la?" },
-              class: "pl-3 gray-category font-weight-bold"
-            %>
-            <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_donation_path(@donation), class: "pl-3 gray-category font-weight-bold" %>
-          <% end %>
         </div>
 
-      </div>
-      <div class="donation-description">
-        <br>
-        <p><%= @donation.description.capitalize %></p>
-      </div>
-      <div class="d-flex justify-content-center">
-        <%= link_to donation_path(@donation, status: "open"), method: :put, remote: true do %>
-          <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> m-2 ">Disponível</div>
-        <% end %>
-        <%= link_to donation_path(@donation, status: "closed"), method: :put, remote: true do %>
-          <div class="btn btn-status <%= @donation.status == "closed" ? "btn-secondary" : "btn-outline-secondary" %> m-2">Doado</div>
-        <% end %>
+        <div class="donation-description">
+          <br>
+          <p><%= @donation.description.capitalize %></p>
+        </div>
+
+        <div>
+          <% if current_user.donor? %>
+            <div class="d-flex justify-content-center">
+              <%= link_to donation_path(@donation, status: "open"), method: :put, remote: true do %>
+                <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> m-2 ">Disponível</div>
+              <% end %>
+              <%= link_to donation_path(@donation, status: "closed"), method: :put, remote: true do %>
+                <div class="btn btn-status <%= @donation.status == "closed" ? "btn-secondary" : "btn-outline-secondary" %> m-2">Doado</div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
 
       </div>
     </div>
   </div>
-</div>
 
-<div class="section">
-  <div class="zigzag" id="gradient-border"></div>
+    <div class="section">
+      <div class="zigzag" id="gradient-border"></div>
+        <div class="container receivers">
+          <div class="mt-3">
+            <% if current_user.receiver? %>
+              <%= link_to "<i class='fab fa-whatsapp'></i> Fale com #{@donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-lg whatsapp-btn" %>
+            <% end %>
+          </div>
 
-     <div class="container receivers">
-        <div class="mt-3">
-          <% if current_user.receiver? %>
-            <%= link_to "<i class='fab fa-whatsapp'></i> Fale com #{@donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-lg whatsapp-btn" %>
-          <% end %>
-        </div>
-        <% if current_user.donor? %>
-          <div>
-            <h2 class="receiver-title">Instituições compatíveis</h2>
-            <p><strong>Ooouuiiii! Sua tralha terá um destino em breve.</strong>
-            <br>Essas são instituições que podem estar interessadas nesta doação e podem entrar em contato com você a qualquer momento.</p>
-                    <div class="cardsRene">
-                      <% @users.each do |user| %>
-                        <div class="card-donation-infos col-6">
-                          <div>
-                             <h3> <%= user.name.capitalize %> </h3>
-                            <% if @donation.user.photo.attached? %>
-                              <%= cl_image_tag user.photo.key, crop: :fill, class: "lg-user-avatar" %>
-                            <% else %>
-                              <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
-                            <% end %>
+            <% if current_user.donor? %>
+              <div>
+                <p><strong>Ooouuiiii! Sua tralha terá um destino em breve!</strong>
+                <br>
+                <br>Instituições que podem se interessar na sua doação</p>
+                  <div class="cardsRene">
+                    <% @users.each do |user| %>
+                      <div class="card-donation-infos col-6">
+                        <div>
+                          <div class="d-flex flex-column align-content-between">
+                            <div class="d-flex flex-column justify-content-center mx-auto">
+                              <h3> <%= user.name.capitalize %> </h3>
+                              <% if @donation.user.photo.attached? %>
+                                <%= cl_image_tag user.photo.key, crop: :fill, class: "lg-user-avatar" %>
+                              <% else %>
+                                <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
+                              <% end %>
+                            </div>
+
+                            <!-- Button trigger modal -->
+                            <div>
+                              <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">
+                                Quer saber mais?
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content d-flex-column">
+                                <div class="modal-header">
+                                  <div class="modal-name">
+                                    <h5 class="modal-title" id="exampleModalLabel"><%=user.name.capitalize %></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+
+                                  <div>
+                                    <%= "⭐" * rand(1..5) %>
+                                  </div>
+                                </div>
+
+                                <div class="modal-body">
+                                  <%= user.description %>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      <% end %>
-                    </div>
+                      </div>
+                    <% end %>
                   </div>
               </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-</div>
-
-
+            <% end %>
+        </div>
+    </div>

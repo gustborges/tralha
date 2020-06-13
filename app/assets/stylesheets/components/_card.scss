@@ -50,6 +50,13 @@
   color: gray;
 }
 
+.gray-category a {
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+
+}
 .salmon-title {
   color: $salmon;
   font-weight: bold;
