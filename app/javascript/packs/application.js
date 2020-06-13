@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
 
     loadDynamicBannerText();
     animeScroll();
-    // bigRene();
+    bigRene();
 
   // initSelect2();
     // initUpdateNavbarOnScroll();
