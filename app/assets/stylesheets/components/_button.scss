@@ -1,40 +1,25 @@
 .btn-hover {
-    width: 200px;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 600;
     color: #fff;
-    cursor: pointer;
     margin: 20px;
     height: 55px;
     text-align:center;
     border: none;
-    background-size: 300% 100%;
-    padding: 12px;
+    background-color: #FF8246;
+    padding: 10px 14px;
     border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    box-shadow: 0 0.5px 2px 0 rgba(0,0,0, 0.3);
+    display: inline-block;
 }
 
 .btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
     text-decoration: none;
     color: white;
 }
 
 .btn-hover:focus {
     outline: none;
-}
-
-.btn-hover {
-    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-    // display: none;
 }
 
 .whatsapp-btn {
