@@ -7,3 +7,4 @@ class TransfersController < ApplicationController
     @transfer.status = "open"
     @transfer.save
   end
+end
