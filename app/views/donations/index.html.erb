@@ -16,11 +16,16 @@
               <div class="card-body">
                 <h3><%= donation.name.capitalize %></h3>
                 <h5><%= donation.category.name.upcase %></h5>
-                <h5><%= Geocoder::Calculations.distance_between(
-                        [current_user.latitude, current_user.longitude],
-                        [donation.user.latitude, donation.user.longitude]
-                        ).to_i %> km
-                </h5>
+                <div class="d-flex justify-content-between status-position ">
+                  <p style="color: #FF8246"><%= Geocoder::Calculations.distance_between(
+                          [current_user.latitude, current_user.longitude],
+                          [donation.user.latitude, donation.user.longitude]
+                          ).to_i %> km
+                  </p>
+                  <div class='mt-1'>
+                    <%= link_to "<i class='fab fa-whatsapp' ></i> Fale com #{donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-xs whatsapp-btn-index" %>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
