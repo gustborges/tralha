@@ -9,9 +9,9 @@ class DonationsController < ApplicationController
         @profile_categories << profile.category
       current_user.notifications.update_all(read: true)
       end
-      @categories_id = @receiver_profiles.map { |category| category.category_id }
-      @donations = Donation.includes(:user).where('category_id IN (?)', @categories_id)
-      users_ids = User.near([current_user.latitude, current_user.longitude], 3000, :order => :distance).collect{ |a| a.id }
+      categories_id = @receiver_profiles.map { |category| category.category_id }
+      @donations = Donation.includes(:user).where('category_id IN (?)', categories_id)
+      users_ids = User.near([current_user.latitude, current_user.longitude], 100, :order => :distance).collect{ |a| a.id }
       @donations ||= Donation.all.includes(:user)
       @donations = @donations.where(:user_id =>  users_ids).order(created_at: :desc)
     else
