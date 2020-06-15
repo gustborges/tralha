@@ -1,4 +1,4 @@
-<body class="form-body">
+
   <div class='mt-5 ml-4'>
     <%= link_to root_path do %>
       <i class='fa'>&#xf292</i>
@@ -9,7 +9,7 @@
   <div class="container form">
     <h2>Vamos nos livrar da sua tralha!</h2>
   </div>
-  <div class="container">
+  <div class="container" style="width: 90%;">
     <%= simple_form_for @donation do |f| %>
       <div class="form-inputs">
           <%= f.association :category, label: "Tipo de doação" %>
@@ -24,5 +24,3 @@
     <% end %>
   </div>
 </div>
-
-</body>

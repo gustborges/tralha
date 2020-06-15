@@ -2,12 +2,12 @@
     <div class="conteiner box-name tittle mt-3 mb-3">
       <h2 class="hello"><strong> Olá <%= current_user.name.capitalize %>,</strong> <br> veja as doações disponíveis:</h2>
     </div>
-  <div class='container' style="padding-top: 30px">
-    <div class="row">
+  <div class='container' style="padding-top: 200px">
+    <div class="row indexcards">
       <% @donations.each do |donation| %>
         <div class="col-sm-12 col-md-6 col-lg-4 no-decoration">
           <%= link_to donation_path(donation) do  %>
-            <div class="card-product justify-content-start">
+            <div class="card-product d-flex justify-content-start">
               <% if donation.photo.attached? %>
                 <%= cl_image_tag donation.photo.key, class: "card-img-top rounded-top", crop: :fill %>
               <% else %>
@@ -16,11 +16,16 @@
               <div class="card-body">
                 <h3><%= donation.name.capitalize %></h3>
                 <h5><%= donation.category.name.upcase %></h5>
-                <h5><%= Geocoder::Calculations.distance_between(
-                        [current_user.latitude, current_user.longitude],
-                        [donation.user.latitude, donation.user.longitude]
-                        ).to_i %> km
-                </h5>
+                <div class="d-flex status-position ">
+                  <p style="color: #FF8246"><%= Geocoder::Calculations.distance_between(
+                          [current_user.latitude, current_user.longitude],
+                          [donation.user.latitude, donation.user.longitude]
+                          ).to_i %> km
+                  </p>
+                  <div class='mt-1' style="margin-left: 105px;">
+                    <%= link_to "<i class='fab fa-whatsapp' ></i> Fale com #{donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-xs whatsapp-btn-index" %>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
@@ -32,7 +37,7 @@
     <div class="container box-name tittle mt-3 mb-3">
       <h2><strong>Olá <%= current_user.name.capitalize %>,</strong><br>estas são as suas doações:</h2>
     </div>
-  <div class="container" style="padding-top: 30px">
+  <div class="container" style="padding-top: 200px">
     <div class='row'>
       <% @donations.each do |donation| %>
           <div class="effect col-sm-12 col-md-6 col-lg-4 no-decoration">

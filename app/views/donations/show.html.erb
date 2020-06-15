@@ -5,7 +5,7 @@
       <div class="donation-title">
         <h2><%= @donation.name.capitalize %></h2>
         <% if @donation.photo.attached? %>
-          <%= cl_image_tag @donation.photo.key, height: 400, width: 500, crop: :fill %>
+          <%= cl_image_tag @donation.photo.key, height: 250, width: 350, crop: :fill %>
         <% else %>
           <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
         <% end %>
@@ -63,9 +63,10 @@
 
             <% if current_user.donor? %>
               <div>
-                <p><strong>Ooouuiiii! Sua tralha terá um destino em breve!</strong>
-                <br>
-                <br>Instituições que podem se interessar na sua doação</p>
+                <div class="titulo">
+                  <h2><strong>Ooouuiiii! Sua tralha terá um destino em breve!</strong></h2>
+                   <p>Instituições que podem se interessar na sua doação e entrar em contato com você</p>
+                </div>
                   <div class="cardsRene">
                     <% @users.each do |user| %>
                       <div class="card-donation-infos col-6">
@@ -99,15 +100,14 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-
-                                  <div>
+                                  <div class="modal-body">
+                                    <%= user.description %>
+                                  </div>
+                                  <div class="stars">
                                     <%= "⭐" * rand(1..5) %>
                                   </div>
                                 </div>
 
-                                <div class="modal-body">
-                                  <%= user.description %>
-                                </div>
                               </div>
                             </div>
                           </div>

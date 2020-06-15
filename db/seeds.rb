@@ -155,8 +155,8 @@ d1 = Donation.create!(name: "guarda-roupa",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058436/guardaroupa_fub9dn.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d1.photo.attach(io: file, filename: filename)
 d1.save!
+d1.photo.attach(io: file, filename: filename)
 
 d2 = Donation.create!(name: "o hobbit",
              description: "epico",
@@ -167,8 +167,8 @@ d2 = Donation.create!(name: "o hobbit",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058565/ohobbit_w3oljy.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d2.photo.attach(io: file, filename: filename)
 d2.save!
+d2.photo.attach(io: file, filename: filename)
 
 d3 = Donation.create!(name: "moleton",
              description: "camisa",
@@ -179,8 +179,8 @@ d3 = Donation.create!(name: "moleton",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592059124/moleton-elvis-com-bolso-e-capuz_9763_stbl95.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d3.photo.attach(io: file, filename: filename)
 d3.save!
+d3.photo.attach(io: file, filename: filename)
 
 d4 = Donation.create!(name: "batedeira",
              description: "branca",
@@ -191,8 +191,8 @@ d4 = Donation.create!(name: "batedeira",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058661/batedeira-antiga-walita-funcionando-D_NQ_NP_972184-MLB27648876321_062018-F_e55vng.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d4.photo.attach(io: file, filename: filename)
 d4.save!
+d4.photo.attach(io: file, filename: filename)
 
 d5 = Donation.create!(name: "Escrivaninha",
              description: "Marrom, pouco uso, tamanho padrão",
@@ -203,8 +203,8 @@ d5 = Donation.create!(name: "Escrivaninha",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1591922314/moqkt0romo9xu6svqb5qh44u7rro.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d5.photo.attach(io: file, filename: filename)
 d5.save!
+d5.photo.attach(io: file, filename: filename)
 
 d6 = Donation.create!(name: "Cama",
              description: "Cama de solteiro, com tabuas de madeira",
@@ -215,8 +215,8 @@ d6 = Donation.create!(name: "Cama",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058728/images_sppooz.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d6.photo.attach(io: file, filename: filename)
 d6.save!
+d6.photo.attach(io: file, filename: filename)
 
 d7 = Donation.create!(name: "Vestido",
              description: "Pouco usado, perfeito para ir a igreja",
@@ -227,8 +227,8 @@ d7 = Donation.create!(name: "Vestido",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058778/1000053633C6099PP_1_kqxsdr.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d7.photo.attach(io: file, filename: filename)
 d7.save!
+d7.photo.attach(io: file, filename: filename)
 
 d8 = Donation.create!(name: "Casaco",
              description: "Casaco de inverno, bem quente",
@@ -239,8 +239,8 @@ d8 = Donation.create!(name: "Casaco",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058908/casaco-la-batida-xadrez-preto-com-capuz_529600_600_7_ct2lao.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d8.photo.attach(io: file, filename: filename)
 d8.save!
+d8.photo.attach(io: file, filename: filename)
 
 d9 = Donation.create!(name: "Jaqueta",
              description: "Muito estilosa",
@@ -251,8 +251,8 @@ d9 = Donation.create!(name: "Jaqueta",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592058960/e8476d14c1_jrwsb2.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d9.photo.attach(io: file, filename: filename)
 d9.save!
+d9.photo.attach(io: file, filename: filename)
 
 d10 = Donation.create!(name: "Blusa",
              description: "Blusa social, perfeita para trabalhar",
@@ -263,8 +263,8 @@ d10 = Donation.create!(name: "Blusa",
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592059036/961b2aadd6_vx58vt.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
-d10.photo.attach(io: file, filename: filename)
 d10.save!
+d10.photo.attach(io: file, filename: filename)
 
 puts "destroying Tranfers"
 Transfer.destroy_all

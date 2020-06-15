@@ -107,9 +107,31 @@
   padding-left: 2em;
   box-shadow: 0 4px 13px -5px #777;
   border-radius: 24px;
+  position: fixed;
+  z-index: 1;
 }
 
 .tittle h2 {
   font-size: 20px;
   color: white;
+}
+
+.indexcards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -25px;
+  margin-left: -30px;
+}
+
+.titulo {
+  width: 85%;
+  margin-top: -25px;
+}
+
+.titulo h2 {
+  font-size: 20px;
+}
+
+.titulo p {
+  font-size: 17px;
 }
