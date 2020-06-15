@@ -14,11 +14,10 @@
 
 .form-container h2{
   font-family: 'Bellota Text', cursive;
-  color:white;
-  font-size: 56px;
+  color:#FF8246;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 1px 1px 2px #272121;
-  text-align: center;
 }
 
 .form-box{
@@ -34,7 +33,7 @@
 
 .form-actions {
   text-align:center;
-  margin-top:80px;
+  // margin-top:80px;
 }
 
 #ponto {
@@ -80,4 +79,6 @@
   width: 80%;
   min-height: 0vh;
   padding-top: 0px;
+  margin-bottom: -30px;
+  text-align: center;
 }
