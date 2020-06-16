@@ -23,7 +23,7 @@
                           ).to_i %> km
                   </p>
                   <div class='mt-1' style="margin-left: 105px;">
-                    <%= link_to "<i class='fab fa-whatsapp' ></i> Fale com #{donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-xs whatsapp-btn-index" %>
+                    <%= link_to "<i class='fab fa-whatsapp'></i>".html_safe, "https://api.whatsapp.com/send?phone=55#{donation.user.phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-xs whatsapp-btn-index" %>
                   </div>
                 </div>
               </div>
