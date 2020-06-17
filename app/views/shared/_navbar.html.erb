@@ -17,7 +17,13 @@
     <% end %>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
       <% if user_signed_in? && current_user.role == "receiver"  %>
-        <%= link_to "Você tem #{current_user.notifications.where(read: false).count} novas doações disponíveis", donations_path, class: "dropdown-item notificacao" %>
+        <% if current_user.notifications.where(read: false).count == 0 %>
+          <%= link_to "Você não tem nenhuma nova doação", donations_path, class: "dropdown-item notificacao" %>
+          <% elsif current_user.notifications.where(read: false).count == 1 %>
+          <%= link_to "Você tem #{current_user.notifications.where(read: false).count} nova doação disponível", donations_path, class: "dropdown-item notificacao" %>
+          <% else %>
+          <%= link_to "Você tem #{current_user.notifications.where(read: false).count} novas doações disponíveis", donations_path, class: "dropdown-item notificacao" %>
+        <% end %>
       <% end %>
       <% if user_signed_in? && (current_user.role == "donor")  %>
         <% current_user.notifications.where(read: false).each do |notification| %>
