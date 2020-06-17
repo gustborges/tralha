@@ -5,7 +5,7 @@
       <div class="donation-title">
         <h2><%= @donation.name.capitalize %></h2>
         <% if @donation.photo.attached? %>
-          <%= cl_image_tag @donation.photo.key, crop: :fill %>
+          <%= cl_image_tag @donation.photo.key, height: 250, width: 350, crop: :scale %>
         <% else %>
           <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
         <% end %>
