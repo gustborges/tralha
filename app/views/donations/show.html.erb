@@ -50,7 +50,7 @@
 
       </div>
     </div>
-          <div class="mt-3 botaozap">
+          <div class="mt-3 d-flex justify-content-end">
             <% if current_user.receiver? %>
               <%= link_to "<i class='fab fa-whatsapp'></i> Fale com #{@donation.user.name.capitalize}".html_safe, "https://api.whatsapp.com/send?phone=55#{@phone}&text=Olá,%20tenho%20interesse%20na%20sua%20doação", target: "_blank", class:"btn btn-sucess btn-lg whatsapp-btn" %>
             <% end %>
