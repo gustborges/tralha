@@ -21,7 +21,7 @@
       <% end %>
       <% if user_signed_in? && (current_user.role == "donor")  %>
         <% current_user.notifications.where(read: false).each do |notification| %>
-          <%= link_to "#{notification.title}", users_path, class: "dropdown-item" %>
+          <%= link_to "#{notification.title}", users_path, class: "dropdown-item notificacao" %>
         <% end %>
       <% end %>
     </div>
