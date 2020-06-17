@@ -22,6 +22,12 @@ puts "creating users"
              phone: "8694557868",
              password: "123123")
 
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/caio_s6zg2p.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u1.save!
+u1.photo.attach(io: file, filename: filename)
+
 u2 = User.create!(name: "joao",
              email: "joao@email.com",
              address: "Praça da Bandeira Rio de Janeiro",
@@ -29,6 +35,12 @@ u2 = User.create!(name: "joao",
              description: "doador",
              phone: "21967808889",
              password: "123123")
+
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592352292/users/joao_dro3tk.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u2.save!
+u2.photo.attach(io: file, filename: filename)
 
 u3 = User.create!(name: "pedro",
              email: "pedro@email.com",
@@ -38,6 +50,12 @@ u3 = User.create!(name: "pedro",
              phone: "21967808889",
              password: "123123")
 
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592352295/users/pedro_jg6ieg.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u3.save!
+u3.photo.attach(io: file, filename: filename)
+
 u4 = User.create!(name: "Associação Beneficente Sol de Maria",
              email: "maria@email.com",
              address: "Rua Maria do Carmo 151 Rio de Janeiro",
@@ -45,6 +63,12 @@ u4 = User.create!(name: "Associação Beneficente Sol de Maria",
              description: "Instituição de apoio a comunidades em condição de risco",
              phone: "21994418311",
              password: "123123")
+
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/maria_wnrppk.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u4.save!
+u4.photo.attach(io: file, filename: filename)
 
 u5 = User.create!(name: "Todos Pelas Comunidades",
              email: "joana@email.com",
@@ -54,6 +78,11 @@ u5 = User.create!(name: "Todos Pelas Comunidades",
              phone: "21999397450",
              password: "123123")
 
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/joana_vfjwgm.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u5.save!
+u5.photo.attach(io: file, filename: filename)
 
 u6 = User.create!(name: "Solar + Você",
              email: "solar@email.com",
@@ -63,6 +92,12 @@ u6 = User.create!(name: "Solar + Você",
              phone: "21999397450",
              password: "123123")
 
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/solar_nz29rj.jpg"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u6.save!
+u6.photo.attach(io: file, filename: filename)
+
 u7 = User.create!(name: "Orquestra Maré do Amanhã",
              email: "mare@email.com",
              address: "Rua Teixeira Ribeiro 703 Rio de Janeiro",
@@ -70,6 +105,12 @@ u7 = User.create!(name: "Orquestra Maré do Amanhã",
              description: "Educando e ajudando as comunidades por meio da música",
              phone: "21994418311",
              password: "123123")
+
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/mare_pfsrta.png"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u7.save!
+u7.photo.attach(io: file, filename: filename)
 
 u8 = User.create!(name: "Mundo Novo",
              email: "mundo@email.com",
@@ -79,6 +120,12 @@ u8 = User.create!(name: "Mundo Novo",
              phone: "21994418311",
              password: "123123")
 
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592352010/users/mundo_o2ekqd.png"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u8.save!
+u8.photo.attach(io: file, filename: filename)
+
 u9 = User.create!(name: "Santuário Cristo Redentor",
              email: "cristo@email.com",
              address: "R. Eng. Veiga Brito 87 Rio de Janeiro",
@@ -86,6 +133,12 @@ u9 = User.create!(name: "Santuário Cristo Redentor",
              description: "Nossas doações são entregues a famílias em situação de vulnerabilidade social e de várias instituições sociais, como: o Asilo Socorrinho, a Toca de Assis, as Irmãs Missionárias da Caridade, a Fraternidade O Caminho",
              phone: "21994418311",
              password: "123123")
+
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/cristo_bxemfj.webp"
+filename = File.basename(URI.parse(url).path)
+file = URI.open(url)
+u9.save!
+u9.photo.attach(io: file, filename: filename)
 
 
 u10 = User.create!(name: "Casa do Lixo",
@@ -147,7 +200,7 @@ Donation.destroy_all
 puts "creating donations"
 
 d1 = Donation.create!(name: "guarda-roupa",
-             description: "Armario de madeira semi-novo, usado poucas vezes, precisa de pintura nova",
+             description: "Armário de madeira semi-novo, usado poucas vezes, precisa de pintura nova. Vale também dar uma revisada nos pés que estão um pouco bambas - mas ainda servem.",
              category_id: c1.id,
              user_id: u1.id,
              status: "open")
@@ -158,8 +211,8 @@ file = URI.open(url)
 d1.save!
 d1.photo.attach(io: file, filename: filename)
 
-d2 = Donation.create!(name: "o hobbit",
-             description: "epico",
+d2 = Donation.create!(name: "O Hobbit",
+             description: "Livro épico. Já li duas vezes e agora já chega - não curto mais livros de fantasia. É de quem quiser.",
              category_id: c2.id,
              user_id: u2.id,
              status: "open")
@@ -170,8 +223,8 @@ file = URI.open(url)
 d2.save!
 d2.photo.attach(io: file, filename: filename)
 
-d3 = Donation.create!(name: "moleton",
-             description: "camisa",
+d3 = Donation.create!(name: "Moleton",
+             description: "Casaco moleton pouquíssimo usado, tamanho P.",
              category_id: c3.id,
              user_id: u3.id,
              status: "open")
@@ -182,8 +235,8 @@ file = URI.open(url)
 d3.save!
 d3.photo.attach(io: file, filename: filename)
 
-d4 = Donation.create!(name: "batedeira",
-             description: "branca",
+d4 = Donation.create!(name: "Batedeira",
+             description: "Batedeira branca funcionando. Era da minha avó! Ela fazia vitaminas deliciosas. Quando eu era pequena... joguei um hamster lá dentro e deu ruim.",
              category_id: c1.id,
              user_id: u2.id,
              status: "open")
@@ -195,7 +248,7 @@ d4.save!
 d4.photo.attach(io: file, filename: filename)
 
 d5 = Donation.create!(name: "Escrivaninha",
-             description: "Marrom, pouco uso, tamanho padrão",
+             description: "Marrom, pouco uso, tamanho padrão. Não tem arranhões, nem cupim. Estou doando devido a uma mudança. Não cabe mais em casa.",
              category_id: c1.id,
              user_id: u3.id,
              status: "open")
@@ -207,7 +260,7 @@ d5.save!
 d5.photo.attach(io: file, filename: filename)
 
 d6 = Donation.create!(name: "Cama",
-             description: "Cama de solteiro, com tabuas de madeira",
+             description: "Cama de solteiro, com tábuas de madeira. Está em bom estado e pode servir a alguém. Hoje e estou casadíssima, então não tem mais uso.",
              category_id: c1.id,
              user_id: u2.id,
              status: "open")
@@ -219,7 +272,7 @@ d6.save!
 d6.photo.attach(io: file, filename: filename)
 
 d7 = Donation.create!(name: "Vestido",
-             description: "Pouco usado, perfeito para ir a igreja",
+             description: "Pouco usado, perfeito para ir a igreja. Está sem buracos, rasgos ou qualquer mancha. Só lavar e usar.",
              category_id: c3.id,
              user_id: u1.id,
              status: "open")
@@ -231,7 +284,7 @@ d7.save!
 d7.photo.attach(io: file, filename: filename)
 
 d8 = Donation.create!(name: "Casaco",
-             description: "Casaco de inverno, bem quente",
+             description: "Casaco de inverno, bem quente. Vale usar inclusive para regiões mais frias no sul do país ou viagem ao exterior. Aguentei -2 abaixo de zero... ou seja, funciona.",
              category_id: c3.id,
              user_id: u2.id,
              status: "open")
@@ -255,7 +308,7 @@ d9.save!
 d9.photo.attach(io: file, filename: filename)
 
 d10 = Donation.create!(name: "Blusa",
-             description: "Blusa social, perfeita para trabalhar",
+             description: "Blusa social, perfeita para trabalhar. Linda e pouco usada, porque engordei e não cabe mais.",
              category_id: c3.id,
              user_id: u2.id,
              status: "open")
