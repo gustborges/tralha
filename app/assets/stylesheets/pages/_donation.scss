@@ -60,6 +60,7 @@
   text-align: justify;
   background-color: #b9e1dc;
   width: 95%;
+  padding-bottom: 1em;
 }
 
 .receivers p{
@@ -135,3 +136,9 @@
 .titulo p {
   font-size: 17px;
 }
+
+ .receivers-name{
+    display: flex;
+    width: 18em;
+    justify-content: center;
+  }
