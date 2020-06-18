@@ -114,7 +114,7 @@ u7.photo.attach(io: file, filename: filename)
 
 u8 = User.create!(name: "Mundo Novo",
              email: "mundo@email.com",
-             address: "Rua Adolfo de Albuquerque 109 Mesquita",
+             address: "Praça Passeio Publico",
              role: "receiver",
              description: "Mundo Novo é uma instituição social sem fins lucrativos localizada na comunidade da Chatuba de Mesquita",
              phone: "21994418311",
@@ -128,7 +128,7 @@ u8.photo.attach(io: file, filename: filename)
 
 u9 = User.create!(name: "Santuário Cristo Redentor",
              email: "cristo@email.com",
-             address: "R. Eng. Veiga Brito 87 Rio de Janeiro",
+             address: "Cristo Redentor",
              role: "receiver",
              description: "Nossas doações são entregues a famílias em situação de vulnerabilidade social e de várias instituições sociais, como: o Asilo Socorrinho, a Toca de Assis, as Irmãs Missionárias da Caridade, a Fraternidade O Caminho",
              phone: "21994418311",
@@ -341,11 +341,11 @@ ReceiverProfile.destroy_all
 
 puts "creating Receiver_profiles"
 
-# ReceiverProfile.create!(user_id: u4.id,
-#              category_id: c1.id)
-
 ReceiverProfile.create!(user_id: u4.id,
-             category_id: c3.id)
+             category_id: c1.id)
+
+# ReceiverProfile.create!(user_id: u4.id,
+#              category_id: c3.id)
 
 # ReceiverProfile.create!(user_id: u4.id,
 #              category_id: c3.id)
@@ -386,7 +386,7 @@ Notification.destroy_all
 puts "creating notifications"
 
 Notification.create!(user_id: u4.id,
-  title: "Nova doação disponível: #{d1.name} de #{u1.name}",
+  title: "Nova doação disponível: Cadeira Gamer de #{u1.name}",
   read: false,
   recipient: "receiver"
 )
