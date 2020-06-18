@@ -78,6 +78,14 @@
                     <div class="receivers-name">
                       <h3 style="font-size: 15px; padding-top: 1em;"> <%= user.name.capitalize %> </h3>
                     </div>
+                    <div class="mt-4 ml-3 font-weight-bold">
+                      <% if user.latitude && current_user.latitude %>
+                        <h3 style="color: #FF8246"><%= Geocoder::Calculations.distance_between(
+                            [current_user.latitude, current_user.longitude],
+                            [user.latitude, user.longitude]).to_i %> km
+                        </h3>
+                      <% end %>
+                    </div>
                   </div>
                 </button>
                 <!-- Modal -->
