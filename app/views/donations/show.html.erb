@@ -5,7 +5,7 @@
       <div class="donation-title">
         <h2><%= @donation.name.capitalize %></h2>
         <% if @donation.photo.attached? %>
-          <%= cl_image_tag @donation.photo.key, height: 250, width: 350, crop: :scale %>
+          <%= cl_image_tag @donation.photo.key, height: 250, width:350, crop: :pad %>
         <% else %>
           <%= image_tag "old_furniture.jpg", height: '100%', width: '100%', alt: "Foto de #{@donation.name}" %>
         <% end %>
@@ -75,7 +75,7 @@
                               <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
                             <% end %>
                             <div class="receivers-name">
-                              <h3 style="font-size: 15px; padding-top: 1em;"> <%= user.name.capitalize %> </h3>
+                              <h3 style="font-size: 15px; padding-top: 1em;"> <%= user.name %> </h3>
                             </div>
                           </div>
                             <!-- Button trigger modal -->
