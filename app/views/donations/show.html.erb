@@ -36,12 +36,12 @@
 
 
           <% if current_user.donor? %>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mr-4">
               <%= link_to donation_path(@donation, status: "open"), method: :put, remote: true do %>
-                <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> m-2 ">Disponível</div>
+                <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> ">Disponível</div>
               <% end %>
               <%= link_to donation_path(@donation, status: "closed"), method: :put, remote: true do %>
-                <div class="btn btn-status <%= @donation.status == "closed" ? "btn-secondary" : "btn-outline-secondary" %> m-2">Doado</div>
+                <div class="btn btn-status <%= @donation.status == "closed" ? "btn-secondary" : "btn-outline-secondary" %> ">Doado</div>
               <% end %>
             </div>
           <% end %>
@@ -60,50 +60,50 @@
     <div class="section">
       <div class="zigzag" id="gradient-border"></div>
         <div class="container receivers">
-              <div class="titulo">
-                <h2><strong>Ooouuiiii! Sua tralha terá um destino em breve!</strong></h2>
-                <p>Instituições que podem se interessar na sua doação e entrar em contato com você</p>
-              </div>
-                <div class="cardsRene">
-                  <% @users.each do |user| %>
-                    <div class="card-donation-infos2 d-flex">
-                        <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">
-                          <div class="conteudo-cards d-flex">
-                            <% if @donation.user.photo.attached? %>
-                              <%= cl_image_tag user.photo.key, crop: :fill, class: "lg-user-avatar" %>
-                            <% else %>
-                              <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
-                            <% end %>
-                            <div class="receivers-name">
-                              <h3 style="font-size: 15px; padding-top: 1em;"> <%= user.name %> </h3>
-                            </div>
-                          </div>
-                            <!-- Button trigger modal -->
-                        </button>
-                          <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content d-flex-column">
-                            <div class="modal-header">
-                              <div class="modal-name">
-                                <h5 class="modal-title" id="exampleModalLabel"><%=user.name.capitalize %></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <%= user.description %>
-                              </div>
-                              <div class="stars">
-                                <%= "⭐" * rand(1..5) %>
-                              </div>
-                            </div>
-                          </div>
+          <div class="titulo">
+            <h2><strong>Ooouuiiii! Sua tralha terá um destino em breve!</strong></h2>
+            <p>Instituições que podem se interessar na sua doação e entrar em contato com você</p>
+          </div>
+          <div class="cardsRene">
+            <% @users.each do |user| %>
+              <div class="card-donation-infos2 d-flex">
+                <!-- Button trigger modal -->
+                <button type="button" class="modal-btn" data-toggle="modal" data-target=<%= "#exampleModal" + user.id.to_s %>>
+                  <div class="conteudo-cards d-flex">
+                    <% if @donation.user.photo.attached? %>
+                      <%= cl_image_tag user.photo.key, crop: :fill, class: "lg-user-avatar" %>
+                    <% else %>
+                      <%= image_tag "renezin.png", crop: :fill, class: "lg-user-avatar", alt: "alttext" %>
+                    <% end %>
+                    <div class="receivers-name">
+                      <h3 style="font-size: 15px; padding-top: 1em;"> <%= user.name.capitalize %> </h3>
+                    </div>
+                  </div>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id=<%= "exampleModal" + user.id.to_s %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content d-flex-column">
+                      <div class="modal-header">
+                        <div class="modal-name">
+                          <h5 class="modal-title" id=<%= "exampleModal" + user.id.to_s + "Label" %>><%=user.name.capitalize %></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <%= user.description %>
+                        </div>
+                        <div class="stars">
+                          <%= "⭐" * rand(1..5) %>
                         </div>
                       </div>
                     </div>
-                  <% end %>
+                  </div>
                 </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
