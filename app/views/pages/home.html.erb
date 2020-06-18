@@ -86,20 +86,20 @@
 
   <div class="container">
     <h2 class='title mt-0' style="text-align: center">#depoimentos</h2>
-    <div class="bigBox pr-0 pb-0 col-sm-12 col-md-12 d-flex-column">
-      <div class="smallBox-left d-flex">
-        <p><i>"Nunca foi tão fácil me desfazer da minha coleção de livros!"</i></p>
+    <div class="depo-box col-sm-12 col-md-12 d-flex">
+      <div>
+        <%= image_tag "profile-pic.jpg", class: "depo-pic"%>
       </div>
-      <div class="avatar-square-medium avatar-right d-flex mt-3">
-        <%= image_tag "profile-pic.jpg"%>
+      <div>
+        <p>&#8220;Nunca foi tão fácil me desfazer da minha coleção de livros! &#8221;</p>
       </div>
     </div>
-    <div class="bigBox pr-0 pb-0 col-sm-12 col-md-12 d-flex-column">
-      <div class="smallBox-right d-flex mt-5">
-        <p><i>"Consegui cadeiras ótimas semi-usadas para a minha instituição de idosos."</i></p>
+    <div class="depo-box2 col-sm-12 col-md-12 d-flex">
+      <div>
+        <%= image_tag "profile-pic-2.jpg", class: "depo-pic2" %>
       </div>
-      <div class="avatar-square-medium avatar-left d-flex mt-3">
-        <%= image_tag "profile-pic-2.jpg"%>
+      <div>
+        <p> &#8220;Consegui cadeiras ótimas para minha instituição de idosos.&#8221;</p>
       </div>
     </div>
 
@@ -114,3 +114,35 @@
     </div>
   </div>
 
+
+<style>
+.depo-pic {
+  width: 120px;
+  border-radius: 4px;
+  }
+
+.depo-pic2{
+  width: 120px;
+  height: 140px;
+  border-radius: 4px;
+  margin-top: 20px;
+  }
+
+.depo-box p {
+  margin-top: 6px;
+  margin-bottom: 1rem;
+  margin-left: 24px;
+  font-size: 16px;
+  text-align: justify;
+  }
+
+  .depo-box2 p {
+  margin-top: 21px;
+  margin-bottom: 1rem;
+  margin-left: 24px;
+  font-size: 16px;
+  text-align: justify;
+  }
+
+
+</style>
