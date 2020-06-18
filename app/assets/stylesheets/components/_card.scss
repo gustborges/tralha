@@ -16,6 +16,22 @@
   color: black;
  }
 
+.card-donation-infos2 {
+  margin: 4px;
+  // overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  padding: 15px 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  color: black;
+ }
+
 .lg-user-avatar {
   border-radius: 50%;
   height: 100px;
@@ -177,15 +193,15 @@
 }
 
 .cardsRene {
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 8px;
+  // display: flex;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // margin: 8px;
   flex-wrap: wrap;
-  justify-content: center;
+  // justify-content: center;
 }
 
 .cardsRene h3 {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .card-product {
