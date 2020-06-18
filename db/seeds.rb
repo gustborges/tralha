@@ -14,12 +14,12 @@ User.destroy_all
 
 puts "creating users"
 
- u1 = User.create!(name: "caio",
-             email: "caio@email.com",
+ u1 = User.create!(name: "patricia",
+             email: "patricia@email.com",
              address: "Rua miguel de frias 201 niteroi",
              role: "donor",
              description: "doador",
-             phone: "8694557868",
+             phone: "219994418311",
              password: "123123")
 
 url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/caio_s6zg2p.jpg"
@@ -60,7 +60,7 @@ u4 = User.create!(name: "Associação Beneficente Sol de Maria",
              email: "maria@email.com",
              address: "Rua Maria do Carmo 151 Rio de Janeiro",
              role: "receiver",
-             description: "Instituição de apoio a comunidades em condição de risco",
+             description: "Instituição de apoio a pessoas desabrigadas e moradores de rua",
              phone: "21994418311",
              password: "123123")
 
