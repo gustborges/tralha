@@ -19,10 +19,10 @@ puts "creating users"
              address: "Rua miguel de frias 201 niteroi",
              role: "donor",
              description: "doador",
-             phone: "219994418311",
+             phone: "21994418311",
              password: "123123")
 
-url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592351615/users/caio_s6zg2p.jpg"
+url = "https://res.cloudinary.com/ddm2vkpg7/image/upload/v1592525402/users/T02NE0241-USLNMETL6-d26cd4c5a03e-512_fccy4o.jpg"
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)
 u1.save!
@@ -128,7 +128,7 @@ u8.photo.attach(io: file, filename: filename)
 
 u9 = User.create!(name: "Santuário Cristo Redentor",
              email: "cristo@email.com",
-             address: "Cristo Redentor",
+             address: "Rua Teixeira Ribeiro 703 Rio de Janeiro",
              role: "receiver",
              description: "Nossas doações são entregues a famílias em situação de vulnerabilidade social e de várias instituições sociais, como: o Asilo Socorrinho, a Toca de Assis, as Irmãs Missionárias da Caridade, a Fraternidade O Caminho",
              phone: "21994418311",
@@ -386,7 +386,7 @@ Notification.destroy_all
 puts "creating notifications"
 
 Notification.create!(user_id: u4.id,
-  title: "Nova doação disponível: Cadeira Gamer de #{u1.name}",
+  title: "Nova doação disponível: #{d2.name} de #{u1.name}",
   read: false,
   recipient: "receiver"
 )
@@ -422,7 +422,7 @@ Notification.create!(user_id: u9.id,
 )
 
 Notification.create!(user_id: u1.id,
-  title: "#{d2.name.capitalize} ainda não recebeu pedidos. Veja como reciclar!",
+  title: "Cadeira Gamer ainda não recebeu pedidos. Veja como reciclar!",
   read: false,
   recipient: "donnor"
 )
