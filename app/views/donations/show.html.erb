@@ -32,11 +32,15 @@
 
         <div class="donation-description">
           <p style="margin-top: 3em;"><%= @donation.description %></p>
+          <% if @donation.conservation %>
+            <p><%= @donation.conservation %></p>
+          <% end %>
         </div>
 
 
           <% if current_user.donor? %>
-            <div class="d-flex justify-content-center mr-4">
+            <p style="text-align: center">Qual status da sua doação?</p>
+            <div class="d-flex justify-content-center mr-3">
               <%= link_to donation_path(@donation, status: "open"), method: :put, remote: true do %>
                 <div class="btn btn-status <%= @donation.status == "open" ? "btn-secondary" : "btn-outline-secondary" %> ">Disponível</div>
               <% end %>
